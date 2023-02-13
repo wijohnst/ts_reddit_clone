@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "ui";
-import "./App.css";
+import React from 'react'
+import { Link } from 'ui'
+import './App.css'
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
         </div>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
