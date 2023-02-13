@@ -1,2 +1,5 @@
 packages:
-  - "apps/*"
+  - "apps/api"
+  - "apps/web"
+  - "packages/*"
+ 
