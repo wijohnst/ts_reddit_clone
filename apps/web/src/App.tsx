@@ -1,8 +1,7 @@
-import React from 'react'
-import { Link } from 'ui'
+import * as React from 'react'
 import './App.css'
 
-const App = () => {
+const App = (): React.ReactElement => {
   return (
     <div className="App">
       <h1>Reddit Clone</h1>
