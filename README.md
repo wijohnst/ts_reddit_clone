@@ -6,6 +6,14 @@ This project is a monorepo handled by [Turbopack](https://turbo.build/). This me
 
 This project uses [pnpm](https://pnpm.io/) as a package manager.
 
+### Initial Installation
+
+After cloning the repo run:
+
+```bash
+pnpm install
+```
+
 ### Installing a Package
 
 To install a new third-party package, run the following from `root`:
@@ -47,3 +55,21 @@ This project has 2 top-level workspace directories:
 2. `./packages`
 
 `Apps` contains workspaces for the front end and backend applications. `Packages` contains workspaces for packages used by either an app or another package. These top-level directories are specified in the `pnpm-workspace.yaml` config file.
+
+## Running Applications in Development Mode
+
+The core applications in the `apps` workspace all have a `dev` script as defined in their individual `package.json` files. From `root` run:
+
+```bash
+pnpm run dev
+```
+
+This command will run the `dev` command for each individual application in the known workspaces. Workspaces without an explicitly named `dev` command will be skipped. You can start the front end and backend dev environments with a single command.
+
+### Running an individual application in Development Mode
+
+Navigate to an individual application and run:
+
+```bash
+pnpm run dev
+```
