@@ -1,8 +1,12 @@
-import React from "react";
+import * as React from "react";
 import "./App.scss";
 
-function App() {
-  return <h1 className="App">TS Reddit Clone</h1>;
-}
+const App = (): React.ReactElement => {
+  return (
+    <div className="App">
+      <h1>Reddit Clone</h1>
+    </div>
+  );
+};
 
 export default App;
