@@ -73,3 +73,7 @@ Navigate to an individual application and run:
 ```bash
 pnpm run dev
 ```
+
+## Front End Application Styling
+
+The `web` workspace, which houses the projects front end application uses SASS as a CSS pre-compiler. Style sheets should be post-fixed with a `.scss` file extension. `create-react-app` handles SCSS out-of-the-box so a loader is not necessary.
