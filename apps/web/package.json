@@ -12,8 +12,8 @@
     "clean": "rm -rf build"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^1.9.2",
-    "@types/react-redux": "^7.1.25",
+    "@types/node-sass": "^4.11.3",
+    "node-sass": "^8.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^8.0.5",
