@@ -20,9 +20,9 @@ To install a new third-party package, run the following from `root`:
 
 ```bash
  pnpm add <package> --filter <workspace>
- ```
+```
 
- `<workspace>` is the name of the local project where that dependency should be installed. For global packages omit the `--filter` flag.
+`<workspace>` is the name of the local project where that dependency should be installed. For global packages omit the `--filter` flag.
 
 Consider the following file structure:
 
@@ -77,3 +77,137 @@ pnpm run dev
 ## Front End Application Styling
 
 The `web` workspace, which houses the projects front end application uses SASS as a CSS pre-compiler. Style sheets should be post-fixed with a `.scss` file extension. `create-react-app` handles SCSS out-of-the-box so a loader is not necessary.
+
+## React Redux-Toolkit
+
+### navigate to apps/web and install
+
+```
+pnpm i @types/react-redux react-redux @reduxjs/toolkit --filter web
+```
+
+### create a store
+
+We create a store that holds our applications state, for now our store will only hold our application slice.
+
+```jsx
+import { configureStore } from '@reduxjs/toolkit'
+
+export const store = configureStore({
+  reducer: {
+    application: applicationReducer,
+  },
+})
+```
+
+After creating our store we need to wrap our entire app component with the redux provider
+
+```jsx
+<Provider store={store}>
+  <App />
+</Provider>
+```
+
+### Creating a Slice
+
+A slice is a collection of reducer logic, and actions that hold state specific to that slice. We only application for now.
+
+### typing our state with an interface
+
+```jsx
+interface CounterState {
+  value: number;
+}
+
+const initialState: CounterState = {
+  value: 0,
+}
+```
+
+### creating our reducer
+
+```jsx
+export const applicationSlice = createSlice({
+  name: 'application',
+  initialState,
+  reducers: {
+    updateIsTrue: (state, action: PayloadAction<boolean>) => {
+      state.isTrue = action.payload
+    },
+  },
+})
+```
+
+### exporting our actions, state, and reducer
+
+```jsx
+export const { updateIsTrue } = applicationSlice.actions
+
+export const selectApplication = (state: RootState) => state.application.isTrue
+
+export default applicationSlice.reducer
+```
+
+## installing Storybook
+
+### scaffold Storybook and install its dependencies
+
+add the following to the .npmrc at the root of your monorepo:
+
+```
+legacy-peer-deps=true
+node-linker=hoisted
+```
+
+next, initialized storybook, and install dev dependencies
+
+```
+pnpx sb init --skip-install
+pnpm install --save-dev @storybook/cli
+```
+
+### storybook-static
+
+To ensure build caching, you'll first need to add 'storybook-static' to your .gitignore. Then, add 'storybook-static' to the outputs of your turbo.json build task:
+
+```jsx
+     "outputs": [
+       "dist/**",
+       "storybook-static/**"
+      ]
+```
+
+### running storybook & localhost simultaneously
+
+### handling 'modulenotfound error'
+
+we need to add this to the end of our package.json within our apps/web package.json. after adding, restart vscode
+
+```jsx
+ "pnpm": {
+    "overrides": {
+      "enhanced-resolve": "5.10.0"
+    }
+  }
+```
+
+### fixing ajv typeerror
+
+we need to install two dependencies:
+
+```
+pnpm i ajv
+pnpm i schema-utils
+```
+
+### install concurrency:
+
+```
+pnpm i concurrently
+```
+
+### running storybook & localhost:
+
+```
+pnpm run start
+```
