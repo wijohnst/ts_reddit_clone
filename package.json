@@ -1,23 +1,18 @@
 {
   "private": true,
   "scripts": {
-    "start-server": "cd apps/web && pnpm react-scripts start",
-    "start-storybook": "cd apps/web && pnpm start-storybook -p 6006 -s public",
-    "start": "concurrently \"pnpm run start-server\" \"pnpm run start-storybook\"",
     "build": "turbo run build",
     "clean": "turbo run clean",
     "dev": "turbo run dev --no-cache --continue",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
-    "test": "turbo run test"
+    "test": "turbo run test",
+    "storybook": "turbo run storybook "
   },
   "devDependencies": {
     "eslint": "^8.4.1",
     "prettier": "^2.5.1",
     "turbo": "latest"
   },
-  "packageManager": "pnpm@7.15.0",
-  "dependencies": {
-    "concurrently": "^7.6.0"
-  }
+  "packageManager": "pnpm@7.15.0"
 }

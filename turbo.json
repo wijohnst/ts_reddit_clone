@@ -16,6 +16,9 @@
     },
     "clean": {
       "cache": false
+    },
+    "storybook": {
+      "cache": false
     }
   }
 }
