@@ -2,7 +2,7 @@ import express, { Express, Request, Response } from 'express'
 
 const app: Express = express()
 import cors from 'cors'
-const PORT = 8000
+const PORT: number = 8000
 
 app.use(cors())
 
