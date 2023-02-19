@@ -2,7 +2,7 @@
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
     "build": {
-      "outputs": ["build/**", "dist/**"],
+      "outputs": ["build/**", "dist/**", "storybook-static/**"],
       "dependsOn": ["^build"]
     },
     "test": {
@@ -15,6 +15,9 @@
       "persistent": true
     },
     "clean": {
+      "cache": false
+    },
+    "storybook": {
       "cache": false
     }
   }
