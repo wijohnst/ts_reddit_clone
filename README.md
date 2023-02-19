@@ -20,9 +20,9 @@ To install a new third-party package, run the following from `root`:
 
 ```bash
  pnpm add <package> --filter <workspace>
- ```
+```
 
- `<workspace>` is the name of the local project where that dependency should be installed. For global packages omit the `--filter` flag.
+`<workspace>` is the name of the local project where that dependency should be installed. For global packages omit the `--filter` flag.
 
 Consider the following file structure:
 
@@ -77,3 +77,27 @@ pnpm run dev
 ## Front End Application Styling
 
 The `web` workspace, which houses the projects front end application uses SASS as a CSS pre-compiler. Style sheets should be post-fixed with a `.scss` file extension. `create-react-app` handles SCSS out-of-the-box so a loader is not necessary.
+
+# Back-End / API
+
+## Express
+
+### Installing Express
+
+`pnpm install express`
+
+### Installing Cors
+
+`pnpm install cors`
+
+### Creating End-Point / Server
+
+```jsx
+app.get('/', (req: Request, res: Response) => {
+  res.send('Home Rout Working')
+})
+
+app.listen(PORT, () => {
+  console.log('Server has started...')
+})
+```
