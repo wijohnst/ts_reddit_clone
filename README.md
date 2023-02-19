@@ -84,11 +84,11 @@ The `web` workspace, which houses the projects front end application uses SASS a
 
 ### Installing Express
 
-`pnpm install express`
+`npm install express`
 
 ### Installing Cors
 
-`pnpm install cors`
+`npm install cors`
 
 ### Installing @Types/Cors
 
