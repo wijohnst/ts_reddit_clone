@@ -90,6 +90,15 @@ The `web` workspace, which houses the projects front end application uses SASS a
 
 `pnpm install cors`
 
+### Installing @Types/Cors
+
+`npm install --save-dev @types/cors`
+
+### changing type to module for es6 modules
+
+We can do this by adding the following to our package.json
+`"type":"module",`
+
 ### Creating End-Point / Server
 
 ```jsx

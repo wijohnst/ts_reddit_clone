@@ -1,9 +1,8 @@
-import { Request, Response } from 'express'
+import express, { Express, Request, Response } from 'express'
 
-const express = require('express')
-const app = express()
-const cors = require('cors')
-const PORT = 3000
+const app: Express = express()
+import cors from 'cors'
+const PORT = 8000
 
 app.use(cors())
 
