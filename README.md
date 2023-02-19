@@ -78,13 +78,13 @@ pnpm run dev
 
 The `web` workspace, which houses the projects front end application uses SASS as a CSS pre-compiler. Style sheets should be post-fixed with a `.scss` file extension. `create-react-app` handles SCSS out-of-the-box so a loader is not necessary.
 
+# Front-End / Client
+
 ## React Redux-Toolkit
 
 ### navigate to apps/web and install
 
-```
-pnpm i @types/react-redux react-redux @reduxjs/toolkit --filter web
-```
+`pnpm i @types/react-redux react-redux @reduxjs/toolkit --filter web`
 
 ### create a store
 
@@ -92,7 +92,6 @@ We create a store that holds our applications state, for now our store will only
 
 ```jsx
 import { configureStore } from '@reduxjs/toolkit'
-
 export const store = configureStore({
   reducer: {
     application: applicationReducer,
@@ -142,9 +141,7 @@ export const applicationSlice = createSlice({
 
 ```jsx
 export const { updateIsTrue } = applicationSlice.actions
-
 export const selectApplication = (state: RootState) => state.application.isTrue
-
 export default applicationSlice.reducer
 ```
 
@@ -152,62 +149,46 @@ export default applicationSlice.reducer
 
 ### scaffold Storybook and install its dependencies
 
-add the following to the .npmrc at the root of your monorepo:
+add the following to the `.npmrc` at the root of your monorepo:
 
-```
-legacy-peer-deps=true
-node-linker=hoisted
-```
+`legacy-peer-deps=true`
+`node-linker=hoisted`
 
 next, initialized storybook, and install dev dependencies
-
-```
-pnpx sb init --skip-install
-pnpm install --save-dev @storybook/cli
-```
+`pnpx sb init --skip-install`
+`pnpm install --save-dev @storybook/cli`
 
 ### storybook-static
 
-To ensure build caching, you'll first need to add 'storybook-static' to your .gitignore. Then, add 'storybook-static' to the outputs of your turbo.json build task:
+To ensure build caching, you'll first need to add `storybook-static` to your `.gitignore`. Then, add `storybook-static` to the outputs of your `turbo.json` build task:
 
 ```jsx
-     "outputs": [
-       "dist/**",
-       "storybook-static/**"
-      ]
+"outputs": [
+"dist/**",
+"storybook-static/**"
+]
 ```
 
 ### running storybook & localhost simultaneously
 
+when adding a `dev` script to our root folder, turbopro finds all matching scripts and runs them.
+
 ### handling 'modulenotfound error'
 
-we need to add this to the end of our package.json within our apps/web package.json. after adding, restart vscode
+we need to add this to the end of our `package.json` within our apps/web `package.json`. after adding, restart vscode
 
 ```jsx
- "pnpm": {
-    "overrides": {
-      "enhanced-resolve": "5.10.0"
-    }
-  }
+"pnpm": {
+"overrides": {
+"enhanced-resolve":  "5.10.0"
+}}
 ```
 
-### fixing ajv typeerror
+### fixing ajv type-error
 
 we need to install two dependencies:
-
-```
-pnpm i ajv
-pnpm i schema-utils
-```
-
-### install concurrency:
-
-```
-pnpm i concurrently
-```
+`pnpm i schema-utils`
 
 ### running storybook & localhost:
 
-```
-pnpm run start
-```
+`pnpm run start`
