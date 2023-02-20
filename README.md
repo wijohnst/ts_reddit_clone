@@ -80,36 +80,12 @@ The `web` workspace, which houses the projects front end application uses SASS a
 
 # Back-End / API
 
-## Express
-
-### Installing Express
-
-`npm install express`
-
-### Installing Cors
-
-`npm install cors`
-
-### Installing @Types/Cors
-
-`npm install --save-dev @types/cors`
+We are using Express, popular Node.js framework.
 
 ### changing type to module for es6 modules
 
-We can do this by adding the following to our package.json
-`"type":"module",`
+Rather than relying on `require()` to import our dependencies, we can use ES6 modules to enable straightforward imports, similar to React.
 
-we need to do the same within our apps/api/tsconfig.json
-`module:ES2020`
+```
 
-### Creating End-Point / Server
-
-```jsx
-app.get('/', (req: Request, res: Response) => {
-  res.send('Home Rout Working')
-})
-
-app.listen(PORT, () => {
-  console.log('Server has started...')
-})
 ```
