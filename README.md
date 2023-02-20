@@ -99,6 +99,9 @@ The `web` workspace, which houses the projects front end application uses SASS a
 We can do this by adding the following to our package.json
 `"type":"module",`
 
+we need to do the same within our apps/api/tsconfig.json
+`module:ES2020`
+
 ### Creating End-Point / Server
 
 ```jsx
