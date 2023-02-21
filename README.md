@@ -78,6 +78,24 @@ pnpm run dev
 
 The `web` workspace, which houses the projects front end application uses SASS as a CSS pre-compiler. Style sheets should be post-fixed with a `.scss` file extension. `create-react-app` handles SCSS out-of-the-box so a loader is not necessary.
 
+# Front-End / Client
+
+## React Redux-Toolkit
+
+We have organized our Redux state management using the "slices" concept, which allows us to easily manage different parts of the application's state. Additionally, we are using the "ducks" methodology to organize our Redux code.
+
+### creating custom hooks
+
+We used `useDispatch` + `useSelector` to create custom hooks `useAppDispatch` + `useAppSelector` that are typed to make sure we interact with our redux store in a type safe way.
+
+## Storybook
+
+We are using JSDocs to document our components. Within this project, all component props should be commented with JSDocs.
+
+As for functions, we are documenting all params, including their name and type. Lastly you should write a brief description on what the function does
+
+=======
+
 # Back-End / API
 
 We are using Express, popular Node.js framework.
@@ -86,6 +104,3 @@ We are using Express, popular Node.js framework.
 
 Rather than relying on `require()` to import our dependencies, we can use ES6 modules to enable straightforward imports, similar to React.
 
-```
-
-```
