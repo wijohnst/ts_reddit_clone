@@ -93,3 +93,14 @@ We used `useDispatch` + `useSelector` to create custom hooks `useAppDispatch` + 
 We are using JSDocs to document our components. Within this project, all component props should be commented with JSDocs.
 
 As for functions, we are documenting all params, including their name and type. Lastly you should write a brief description on what the function does
+
+=======
+
+# Back-End / API
+
+We are using Express, popular Node.js framework.
+
+### changing type to module for es6 modules
+
+Rather than relying on `require()` to import our dependencies, we can use ES6 modules to enable straightforward imports, similar to React.
+
