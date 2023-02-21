@@ -1,10 +1,3 @@
-// importing store
-const store = require('../src/app/store')
-
-module.exports = {
-  decorators: [],
-}
-
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
