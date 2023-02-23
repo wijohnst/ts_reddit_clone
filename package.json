@@ -1,20 +1,31 @@
 {
   "private": true,
   "scripts": {
-		"preinstall": "npx only-allow pnpm",
+    "preinstall": "npx only-allow pnpm",
     "build": "turbo run build",
     "clean": "turbo run clean",
     "dev": "turbo run dev --no-cache --continue",
-		"dev:server": "cd apps/api && pnpm run dev",
+    "dev:server": "cd apps/api && pnpm run dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
     "test": "turbo run test",
-    "storybook": "turbo run storybook "
+    "storybook": "turbo run storybook",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "eslint": "^8.4.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
     "prettier": "^2.5.1",
     "turbo": "latest"
   },
-  "packageManager": "pnpm@7.15.0"
+  "packageManager": "pnpm@7.15.0",
+  "lint-staged": {
+    "apps/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
+  }
 }
