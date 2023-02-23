@@ -1,0 +1,23 @@
+{
+	"display": "Node-Express",
+	"extends": "./base.json",
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": [
+      "es6"
+    ],
+    "module": "ES2022",
+    "rootDir": "src",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "outDir": "build",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true
+  },
+  "ts-node": {
+    "esm": true
+  }
+}
