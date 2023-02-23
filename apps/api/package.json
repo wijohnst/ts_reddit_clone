@@ -1,12 +1,13 @@
 {
   "name": "api",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.0",
+  "private": true,
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "pnpm nodemon"
+    "dev": "pnpm nodemon",
+    "lint": "eslint --fix --ext .ts"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,7 @@
   "devDependencies": {
     "@types/cors": "^2.8.13",
     "@types/node": "^16.11.14",
+    "eslint": "^8.4.1",
     "nodemon": "^2.0.20",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.5"
