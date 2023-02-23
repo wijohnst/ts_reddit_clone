@@ -1,9 +1,11 @@
 {
   "private": true,
   "scripts": {
+		"preinstall": "npx only-allow pnpm",
     "build": "turbo run build",
     "clean": "turbo run clean",
     "dev": "turbo run dev --no-cache --continue",
+		"dev:server": "cd apps/api && pnpm run dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
     "test": "turbo run test",
