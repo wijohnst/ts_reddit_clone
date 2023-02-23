@@ -1,4 +1,14 @@
 {
   "extends": "tsconfig/react-app.json",
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "es2015"],
+    "module": "esnext",
+    "jsx": "react",
+    "sourceMap": true,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
   "include": ["src"]
 }
