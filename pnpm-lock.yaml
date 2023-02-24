@@ -74,6 +74,7 @@ importers:
       react-query: ^3.39.3
       react-redux: ^8.0.5
       react-scripts: 5.0.0
+      redux: ^4.2.1
       schema-utils: ^4.0.0
       tsconfig: workspace:*
       typescript: ^4.5.4
@@ -94,6 +95,7 @@ importers:
       react-query: 3.39.3_sfoxds7t5ydpegc3knd667wn6m
       react-redux: 8.0.5_27nnqo76gztpod7yf2ma4s6bee
       react-scripts: 5.0.0_nscezoq4ovbipqvy34j76tzjli
+      redux: 4.2.1
       schema-utils: 4.0.0
       ui: link:../../packages/ui
       web-vitals: 2.1.4
