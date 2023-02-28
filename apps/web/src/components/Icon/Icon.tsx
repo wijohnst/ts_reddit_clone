@@ -1,6 +1,15 @@
 import * as React from 'react';
 
-const Icon = () => {
-  return <div>Icon</div>;
+interface Props {
+  icon: string;
+}
+
+const Icon = (props: Props) => {
+  const { icon } = props;
+  return (
+    <>
+      <img src={icon} />
+    </>
+  );
 };
 export default Icon;
