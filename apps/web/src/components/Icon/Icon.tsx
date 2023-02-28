@@ -1,14 +1,16 @@
 import * as React from 'react';
+import './Icon.scss';
 
 interface Props {
-  icon: string;
+  // we are only accepting svg elements
+  svg: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
 }
 
-const Icon = (props: Props) => {
-  const { icon } = props;
+// destructuring props, and renaming svg so we can render SVG element
+const Icon = ({ svg: Svg }: Props) => {
   return (
     <>
-      <img src={icon} />
+      <Svg />
     </>
   );
 };
