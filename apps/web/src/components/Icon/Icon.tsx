@@ -2,16 +2,19 @@ import * as React from 'react';
 import './Icon.scss';
 
 interface Props {
-  // we are only accepting svg elements
   svg: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  color?: string;
 }
 
-// destructuring props, and renaming svg so we can render SVG element
-const Icon = ({ svg: Svg }: Props) => {
+const Icon = ({ svg: Svg, color }: Props) => {
   return (
     <>
-      <Svg />
+      <Svg className="icon" style={{ color: color }} />
     </>
   );
 };
+
 export default Icon;
+
+// we need to add on hover
+// we need to make these links
