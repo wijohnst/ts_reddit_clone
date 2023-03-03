@@ -3,11 +3,11 @@ import './Icon.scss';
 
 interface Props {
   children: React.ReactElement;
-  color?: string;
+  style?: React.CSSProperties;
 }
 
-const Icon = ({ children, color }: Props) => {
-  return <>{children}</>;
+const Icon = ({ children, style }: Props) => {
+  return <div style={style}>{children}</div>;
 };
 
 export default Icon;
