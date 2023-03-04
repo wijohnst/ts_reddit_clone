@@ -19,9 +19,9 @@ const sharedStyles = {
   margin: '5px',
 };
 
-const Template = (args: IconArgs): JSX.Element => <Icon {...args} />;
+const Template = (args: IconArgs): JSX.Element => <Icon {...args}></Icon>;
 
-export const Reddit = (args: IconArgs) => <Template {...args} />;
+export const Reddit = (args: IconArgs) => <Template {...args}></Template>;
 Reddit.args = {
   children: <RedditIcon color="#ff2800" />,
   style: sharedStyles,
