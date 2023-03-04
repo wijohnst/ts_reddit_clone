@@ -9,7 +9,13 @@ export default {
 };
 
 interface IconArgs {
+  /**
+   * child icon SVG component passed to the Icon component
+   */
   children: JSX.Element;
+  /**
+   * global css styles applied to all of our Icon components
+   */
   style?: React.CSSProperties;
 }
 
@@ -21,7 +27,7 @@ const sharedStyles = {
 
 const Template = (args: IconArgs): JSX.Element => <Icon {...args}></Icon>;
 
-export const Reddit = (args: IconArgs) => <Template {...args}></Template>;
+export const Reddit = (args: IconArgs) => <Template {...args} />;
 Reddit.args = {
   children: <RedditIcon color="#ff2800" />,
   style: sharedStyles,
