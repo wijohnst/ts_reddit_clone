@@ -17,17 +17,20 @@ interface IconArgs {
 
 const Template = (args: IconArgs): JSX.Element => <Icon {...args}></Icon>;
 
-export const Reddit = (args: IconArgs) => <Template {...args} />;
-Reddit.args = {
-  children: <RedditIcon color="#ff2800" />,
-};
+export const Reddit = (args: IconArgs) => (
+  <Template {...args}>
+    <RedditIcon color="#ff2800" />
+  </Template>
+);
 
-export const User = (args: IconArgs) => <Template {...args} />;
-User.args = {
-  children: <UserIcon color="black" />,
-};
+export const User = (args: IconArgs) => (
+  <Template {...args}>
+    <UserIcon color="black" />
+  </Template>
+);
 
-export const Home = (args: IconArgs) => <Template {...args} />;
-Home.args = {
-  children: <HomeIcon color="black" />,
-};
+export const Home = (args: IconArgs) => (
+  <Template {...args}>
+    <HomeIcon color="black" />
+  </Template>
+);
