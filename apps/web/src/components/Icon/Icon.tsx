@@ -1,8 +1,14 @@
 import * as React from 'react';
 import './Icon.scss';
 
+export enum iconColor {
+  Default = 'black',
+  Orange = '#ff2800',
+}
+
 interface Props {
   children: React.ReactElement;
+  colorProp?: iconColor;
 }
 
 /**
@@ -12,8 +18,8 @@ interface Props {
  * @param {React.ReactElement} props.children - The child element to render within the icon.
  * @returns {JSX.Element} - A JSX element representing the icon component.
  */
-const Icon = ({ children }: Props) => {
-  return <div>{children}</div>;
+const Icon = ({ children, colorProp }: Props) => {
+  return <div style={{ color: colorProp }}>{children}</div>;
 };
 
 export default Icon;

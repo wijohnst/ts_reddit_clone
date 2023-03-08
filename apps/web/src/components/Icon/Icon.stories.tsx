@@ -8,29 +8,20 @@ export default {
   component: Icon,
 };
 
-interface IconArgs {
-  /**
-   * child icon SVG component passed to the Icon component
-   */
-  children: JSX.Element;
-}
-
-const Template = (args: IconArgs): JSX.Element => <Icon {...args}></Icon>;
-
-export const Reddit = (args: IconArgs) => (
-  <Template {...args}>
+export const Reddit = () => (
+  <Icon>
     <RedditIcon color="#ff2800" />
-  </Template>
+  </Icon>
 );
 
-export const User = (args: IconArgs) => (
-  <Template {...args}>
+export const User = () => (
+  <Icon>
     <UserIcon color="black" />
-  </Template>
+  </Icon>
 );
 
-export const Home = (args: IconArgs) => (
-  <Template {...args}>
+export const Home = () => (
+  <Icon>
     <HomeIcon color="black" />
-  </Template>
+  </Icon>
 );
