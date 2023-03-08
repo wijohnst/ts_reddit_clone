@@ -94,6 +94,14 @@ We are using JSDocs to document our components. Within this project, all compone
 
 As for functions, we are documenting all params, including their name and type. Lastly you should write a brief description on what the function does
 
+## Svgr / working with SVG icons within our src/assets folder
+
+When working with SVG icons in React, we can use the svgr package to convert them into reusable React components. This not only optimizes the SVG but also allows the browser to render the icon as a react component.
+
+In order to import our SVGs as React components, we uuse the ReactComponent import syntax. For example, `import { ReactComponent as Icon-Name } from '...'`
+
+To streamline the process of converting SVG icons to React components, we've included a script in our package.json file: `"build:svgs": "svgr --icon --out-dir src/assets"`. Running this script each time we add a new icon to our assets folder ensures that we don't forget to convert it and that we're always up-to-date with the latest icons in our application.
+
 =======
 
 # Back-End / API
@@ -103,4 +111,3 @@ We are using Express, popular Node.js framework.
 ### changing type to module for es6 modules
 
 Rather than relying on `require()` to import our dependencies, we can use ES6 modules to enable straightforward imports, similar to React.
-
