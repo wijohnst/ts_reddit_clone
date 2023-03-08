@@ -1,4 +1,4 @@
-import Icon from './Icon';
+import Icon, { iconColor } from './Icon';
 import { ReactComponent as RedditIcon } from '../../assets/redditIcon.svg';
 import { ReactComponent as UserIcon } from '../../assets/userIcon.svg';
 import { ReactComponent as HomeIcon } from '../../assets/homeIcon.svg';
@@ -9,19 +9,19 @@ export default {
 };
 
 export const Reddit = () => (
-  <Icon>
-    <RedditIcon color="#ff2800" />
+  <Icon colorProp={iconColor.Orange}>
+    <RedditIcon />
   </Icon>
 );
 
 export const User = () => (
-  <Icon>
-    <UserIcon color="black" />
+  <Icon colorProp={iconColor.Default}>
+    <UserIcon />
   </Icon>
 );
 
 export const Home = () => (
-  <Icon>
-    <HomeIcon color="black" />
+  <Icon colorProp={iconColor.Default}>
+    <HomeIcon />
   </Icon>
 );
