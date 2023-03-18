@@ -18,12 +18,8 @@ interface Props {
  * @param {React.ReactElement} props.children - The child element to render within the icon.
  * @returns {JSX.Element} - A JSX element representing the icon component.
  */
-const Icon = ({ children, colorProp }: Props) => {
-  return (
-    <div style={{ color: colorProp ? colorProp : iconColor.Default }}>
-      {children}
-    </div>
-  );
+const Icon = ({ children, colorProp = iconColor.Default }: Props) => {
+  return <div style={{ color: colorProp }}>{children}</div>;
 };
 
 export default Icon;
