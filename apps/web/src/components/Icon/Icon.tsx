@@ -19,7 +19,11 @@ interface Props {
  * @returns {JSX.Element} - A JSX element representing the icon component.
  */
 const Icon = ({ children, colorProp }: Props) => {
-  return <div style={{ color: colorProp }}>{children}</div>;
+  return (
+    <div style={{ color: colorProp ? colorProp : iconColor.Default }}>
+      {children}
+    </div>
+  );
 };
 
 export default Icon;
