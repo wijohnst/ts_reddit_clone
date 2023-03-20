@@ -10,11 +10,11 @@ import { ReactComponent as RedditWordmark } from '../../assets/redditWordmark.sv
 
 const Wordmark = (): React.ReactElement => {
   return (
-    <header>
+    <h1>
       <Icon colorProp={iconColor.Default}>
         <RedditWordmark />
       </Icon>
-    </header>
+    </h1>
   );
 };
 
