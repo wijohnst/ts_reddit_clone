@@ -1,6 +1,5 @@
 import * as React from 'react';
 import './App.scss';
-import ClickableLogo from './components/ClickableLogo/ClickableLogo';
 
 const App = (): React.ReactElement => {
   return (
