@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './Wordmark.scss';
 import Icon, { iconColor } from '../Icon/Icon';
 import { ReactComponent as RedditWordmark } from '../../assets/redditWordmark.svg';
 
