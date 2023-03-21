@@ -19,12 +19,12 @@ const ClickableLogo = (): React.ReactElement => {
    * @description This function is called when the user clicks on the logo. It logs a message to the console to confirm that the click has been registered.
    */
 
-  const handleClick = () => {
+  const handleClick: () => void = () => {
     console.log('Click Registered');
   };
 
   return (
-    <div className="logo-container" onClick={() => handleClick}>
+    <div className="logo-container" onClick={handleClick}>
       <div className="icon-container">
         <Icon colorProp={iconColor.Orange}>
           <RedditIcon />
