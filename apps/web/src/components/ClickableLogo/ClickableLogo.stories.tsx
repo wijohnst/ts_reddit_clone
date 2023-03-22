@@ -5,4 +5,6 @@ export default {
   component: ClickableLogo,
 };
 
-export const Default = () => <ClickableLogo />;
+// const Template = args => <ClickableLogo { ...arg}/>
+
+// export const Default = () => <ClickableLogo {} />;
