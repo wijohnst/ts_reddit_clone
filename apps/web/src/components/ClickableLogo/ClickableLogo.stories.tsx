@@ -5,6 +5,10 @@ export default {
   component: ClickableLogo,
 };
 
-// const Template = args => <ClickableLogo { ...arg}/>
+interface Props {
+  onClick: () => void;
+}
 
-// export const Default = () => <ClickableLogo {} />;
+const Template = ({ onClick }: Props) => <ClickableLogo onClick={onClick} />;
+
+export const Default = Template.bind({});
