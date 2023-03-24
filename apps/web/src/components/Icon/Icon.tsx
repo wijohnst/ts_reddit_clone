@@ -28,7 +28,7 @@ const Icon = ({
     <div
       className="icon-div"
       style={{ color: colorProp }}
-      data-testId={customTestId}
+      data-testid={customTestId}
     >
       {children}
     </div>

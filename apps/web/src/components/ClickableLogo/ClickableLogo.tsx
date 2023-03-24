@@ -6,6 +6,7 @@ import { ReactComponent as RedditIcon } from '../../assets/redditIcon.svg';
 
 interface Props {
   onClick: () => void;
+  customTestId?: string;
 }
 
 /**
@@ -14,9 +15,16 @@ interface Props {
  * @returns {React.ReactElement} A JSX element as a clickable reddit logo component.
  */
 
-const ClickableLogo = ({ onClick }: Props): React.ReactElement => {
+const ClickableLogo = ({
+  onClick,
+  customTestId = 'clickablelogo',
+}: Props): React.ReactElement => {
   return (
-    <div className="logo-container" onClick={onClick}>
+    <div
+      className="logo-container"
+      onClick={onClick}
+      data-testid={customTestId}
+    >
       <div className="icon-container">
         <Icon colorProp={iconColor.Orange} customTestId={'clickableicon-icon'}>
           <RedditIcon />

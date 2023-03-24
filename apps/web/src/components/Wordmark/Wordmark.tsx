@@ -17,7 +17,7 @@ const Wordmark = ({
   customTestId = 'wordmarkTestId',
 }: Props): React.ReactElement => {
   return (
-    <h1 dataTest-id={customTestId}>
+    <h1 data-testid={customTestId}>
       <Icon colorProp={iconColor.Default}>
         <RedditWordmark />
       </Icon>
