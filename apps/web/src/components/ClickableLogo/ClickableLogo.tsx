@@ -18,12 +18,12 @@ const ClickableLogo = ({ onClick }: Props): React.ReactElement => {
   return (
     <div className="logo-container" onClick={onClick}>
       <div className="icon-container">
-        <Icon colorProp={iconColor.Orange}>
+        <Icon colorProp={iconColor.Orange} customTestId={'clickableicon-icon'}>
           <RedditIcon />
         </Icon>
       </div>
       <div className="wordmark-container">
-        <Wordmark />
+        <Wordmark customTestId={'clickableicon-wordmark'} />
       </div>
     </div>
   );

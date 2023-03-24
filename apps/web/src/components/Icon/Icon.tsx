@@ -9,6 +9,7 @@ export enum iconColor {
 interface Props {
   children: React.ReactElement;
   colorProp?: iconColor;
+  customTestId?: string;
 }
 
 /**
@@ -18,9 +19,17 @@ interface Props {
  * @param {React.ReactElement} props.children - The child element to render within the icon.
  * @returns {JSX.Element} - A JSX element representing the icon component.
  */
-const Icon = ({ children, colorProp = iconColor.Default }: Props) => {
+const Icon = ({
+  children,
+  colorProp = iconColor.Default,
+  customTestId = 'iconTestId',
+}: Props) => {
   return (
-    <div className="icon-div" style={{ color: colorProp }}>
+    <div
+      className="icon-div"
+      style={{ color: colorProp }}
+      data-testId={customTestId}
+    >
       {children}
     </div>
   );
