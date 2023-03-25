@@ -11,7 +11,7 @@ interface Props {
   children: React.ReactElement;
   /** The color of the Icon */
   colorProp?: iconColor;
-  /** What should be displayed? */
+  /**  An optional custom test ID for the component.  */
   customTestId?: string;
 }
 

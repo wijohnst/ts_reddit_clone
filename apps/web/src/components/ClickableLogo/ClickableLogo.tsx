@@ -4,10 +4,10 @@ import Icon, { iconColor } from '../Icon/Icon';
 import Wordmark from '../Wordmark/Wordmark';
 import { ReactComponent as RedditIcon } from '../../assets/redditIcon.svg';
 
-interface Props {
+export interface Props {
   /** What should happen with the component is clicked? */
   onClick: () => void;
-  /** how can we identify our elements for testing?  */
+  /**  An optional custom test ID for the component.  */
   customTestId?: string;
 }
 

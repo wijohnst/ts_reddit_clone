@@ -4,7 +4,7 @@ import Icon, { iconColor } from '../Icon/Icon';
 import { ReactComponent as RedditWordmark } from '../../assets/redditWordmark.svg';
 
 interface Props {
-  /** how can we identify our elements for testing?  */
+  /**  An optional custom test ID for the component.  */
   customTestId?: string;
 }
 
