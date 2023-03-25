@@ -7,8 +7,11 @@ export enum iconColor {
 }
 
 interface Props {
+  /** What should be displayed? */
   children: React.ReactElement;
+  /** The color of the Icon */
   colorProp?: iconColor;
+  /** What should be displayed? */
   customTestId?: string;
 }
 
