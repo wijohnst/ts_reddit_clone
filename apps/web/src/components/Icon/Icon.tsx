@@ -4,9 +4,10 @@ import './Icon.scss';
 export enum iconColor {
   Default = 'black',
   Orange = '#ff2800',
+  Grey = '#9e9fa1',
 }
 
-interface Props {
+export interface Props {
   children: React.ReactElement;
   colorProp?: iconColor;
   /** What should happen when the icon is clicked? */
