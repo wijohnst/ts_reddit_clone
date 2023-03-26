@@ -7,8 +7,12 @@ export enum iconColor {
 }
 
 interface Props {
+  /** What should be displayed? */
   children: React.ReactElement;
+  /** The color of the Icon */
   colorProp?: iconColor;
+  /**  An optional custom test ID for the component.  */
+  customTestId?: string;
 }
 
 /**
@@ -18,8 +22,20 @@ interface Props {
  * @param {React.ReactElement} props.children - The child element to render within the icon.
  * @returns {JSX.Element} - A JSX element representing the icon component.
  */
-const Icon = ({ children, colorProp = iconColor.Default }: Props) => {
-  return <div style={{ color: colorProp }}>{children}</div>;
+const Icon = ({
+  children,
+  colorProp = iconColor.Default,
+  customTestId = 'iconTestId',
+}: Props) => {
+  return (
+    <div
+      className="icon-div"
+      style={{ color: colorProp }}
+      data-testid={customTestId}
+    >
+      {children}
+    </div>
+  );
 };
 
 export default Icon;

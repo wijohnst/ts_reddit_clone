@@ -1,6 +1,12 @@
 import * as React from 'react';
+import './Wordmark.scss';
 import Icon, { iconColor } from '../Icon/Icon';
 import { ReactComponent as RedditWordmark } from '../../assets/redditWordmark.svg';
+
+interface Props {
+  /**  An optional custom test ID for the component.  */
+  customTestId?: string;
+}
 
 /**
  * Renders a logo component within a navbar.
@@ -8,9 +14,11 @@ import { ReactComponent as RedditWordmark } from '../../assets/redditWordmark.sv
  * @returns {React.ReactElement} A JSX element representing the Reddit Wordmark component.
  */
 
-const Wordmark = (): React.ReactElement => {
+const Wordmark = ({
+  customTestId = 'wordmarkTestId',
+}: Props): React.ReactElement => {
   return (
-    <h1>
+    <h1 data-testid={customTestId}>
       <Icon colorProp={iconColor.Default}>
         <RedditWordmark />
       </Icon>
