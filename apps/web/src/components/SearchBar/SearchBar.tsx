@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { useState } from 'react';
+import Icon from '../Icon/Icon';
+import { ReactComponent as SearchIcon } from '../../assets/searchIcon.svg';
 
 interface Props {
   /** What happens when we use a searchstring to search for results? */
@@ -26,6 +28,10 @@ const SearchBar = ({ handleSearch }: Props) => {
         onChange={(e) => setSearchString(e.target.value)}
         onKeyDown={handleKeyDown}
       />
+      <Icon>
+        <SearchIcon />
+      </Icon>
+
       <p>{searchString}</p>
     </>
   );
