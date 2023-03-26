@@ -5,7 +5,7 @@ import Wordmark from '../Wordmark/Wordmark';
 import { ReactComponent as RedditIcon } from '../../assets/redditIcon.svg';
 
 export interface Props {
-  /** What should happen with the component is clicked? */
+  /** What should happen when the component is clicked? */
   onClick: () => void;
   /**  An optional custom test ID for the component.  */
   customTestId?: string;

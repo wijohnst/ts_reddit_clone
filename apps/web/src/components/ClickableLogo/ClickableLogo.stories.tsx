@@ -8,7 +8,7 @@ export default {
   argTypes: {
     onClick: { action: 'clicked' },
   },
-};
+} as ComponentMeta<typeof ClickableLogo>;
 
 const Template: ComponentStory<typeof ClickableLogo> = (args: Props) => (
   <ClickableLogo {...args} />
