@@ -28,7 +28,7 @@ const SearchBar = ({ handleSearch }: Props) => {
         onChange={(e) => setSearchString(e.target.value)}
         onKeyDown={handleKeyDown}
       />
-      <Icon>
+      <Icon onClick={handleSearch(searchString)}>
         <SearchIcon />
       </Icon>
 
@@ -37,3 +37,8 @@ const SearchBar = ({ handleSearch }: Props) => {
   );
 };
 export default SearchBar;
+
+// considering giving icon an optional function to handle
+// the click which will in result handleSearch
+// do we need to pass the handleSearch + string to icon?
+// is this prop drilling?
