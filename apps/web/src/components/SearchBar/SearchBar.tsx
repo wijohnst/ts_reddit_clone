@@ -13,7 +13,9 @@ const SearchBar = ({ handleSearch }: Props) => {
   const [searchString, setSearchString] = useState('');
 
   /**
-   * Checks for 'Enter' keydown & invokes handleSearch func
+   * Handles 'Enter' key press & invokes `handleSearch` func
+   *
+   * @param {React.KeyboardEvent} event - The keyboard event that triggered the function.
    */
   const handleKeyDown = (event: React.KeyboardEvent): void => {
     if (event.key === 'Enter') {
@@ -21,7 +23,9 @@ const SearchBar = ({ handleSearch }: Props) => {
     }
   };
 
-  // need to add jsdoc comment + type
+  /**
+   * Handles click & invokes `handleSearch` func
+   */
   const handleClick = (): void => {
     handleSearch(searchString);
   };
