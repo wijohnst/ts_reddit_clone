@@ -12,11 +12,18 @@ interface Props {
 const SearchBar = ({ handleSearch }: Props) => {
   const [searchString, setSearchString] = useState('');
 
-  // need to add jsdoc comment
+  /**
+   * Checks for 'Enter' keydown & invokes handleSearch func
+   */
   const handleKeyDown = (event: React.KeyboardEvent): void => {
     if (event.key === 'Enter') {
       handleSearch(searchString);
     }
+  };
+
+  // need to add jsdoc comment + type
+  const handleClick = (): void => {
+    handleSearch(searchString);
   };
 
   return (
@@ -28,7 +35,7 @@ const SearchBar = ({ handleSearch }: Props) => {
         onChange={(e) => setSearchString(e.target.value)}
         onKeyDown={handleKeyDown}
       />
-      <Icon onClick={handleSearch(searchString)}>
+      <Icon onClick={handleClick}>
         <SearchIcon />
       </Icon>
 
@@ -37,8 +44,3 @@ const SearchBar = ({ handleSearch }: Props) => {
   );
 };
 export default SearchBar;
-
-// considering giving icon an optional function to handle
-// the click which will in result handleSearch
-// do we need to pass the handleSearch + string to icon?
-// is this prop drilling?
