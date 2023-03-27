@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Icon from '../Icon/Icon';
 import { ReactComponent as SearchIcon } from '../../assets/searchIcon.svg';
 import { iconColor } from '../Icon/Icon';
+import './SearchBar.scss';
 
 export interface Props {
   /** What happens when we use a searchstring to search for results? */
@@ -32,7 +33,7 @@ const SearchBar = ({ handleSearch }: Props) => {
   };
 
   return (
-    <>
+    <div className="searchbar-container">
       <input
         type="search"
         placeholder="Search Reddit"
@@ -40,12 +41,13 @@ const SearchBar = ({ handleSearch }: Props) => {
         onChange={(e) => setSearchString(e.target.value)}
         onKeyDown={handleKeyDown}
       />
-      <Icon onClick={handleClick} colorProp={iconColor.Grey}>
-        <SearchIcon />
-      </Icon>
-
+      <div className="icon-container">
+        <Icon onClick={handleClick} colorProp={iconColor.Grey}>
+          <SearchIcon />
+        </Icon>
+      </div>
       <p>{searchString}</p>
-    </>
+    </div>
   );
 };
 export default SearchBar;

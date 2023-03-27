@@ -1,0 +1,19 @@
+.searchbar-container {
+  position: relative;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem 3.5rem;
+  border-radius: 5rem;
+  border: 1px solid gray;
+}
+
+.icon-container {
+  position: absolute;
+  top: 57%;
+  left: 1.5%;
+  transform: translateY(-50%);
+}
+// increase font size of placeholder
+// bolden font barely
