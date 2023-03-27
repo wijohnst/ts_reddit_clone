@@ -2,8 +2,9 @@ import * as React from 'react';
 import { useState } from 'react';
 import Icon from '../Icon/Icon';
 import { ReactComponent as SearchIcon } from '../../assets/searchIcon.svg';
+import { iconColor } from '../Icon/Icon';
 
-interface Props {
+export interface Props {
   /** What happens when we use a searchstring to search for results? */
   handleSearch: (searchString: string) => void;
 }
@@ -39,7 +40,7 @@ const SearchBar = ({ handleSearch }: Props) => {
         onChange={(e) => setSearchString(e.target.value)}
         onKeyDown={handleKeyDown}
       />
-      <Icon onClick={handleClick}>
+      <Icon onClick={handleClick} colorProp={iconColor.Grey}>
         <SearchIcon />
       </Icon>
 

@@ -1,5 +1,6 @@
 import * as React from 'react';
-import SearchBar from './SearchBar';
+import SearchBar, { Props } from './SearchBar';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
   title: 'Components/SearchBar',
@@ -7,10 +8,10 @@ export default {
   argTypes: {
     handleSearch: { action: 'Searching..' },
   },
-};
+} as ComponentMeta<typeof SearchBar>;
 
-interface SearchBarArgs {
-  handleSearch: () => void;
-}
+const Template: ComponentStory<typeof SearchBar> = (args: Props) => (
+  <SearchBar {...args} />
+);
 
-const Template = (args: SearchBarArgs) => <SearchBar {...args} />;
+export const Default = Template.bind({});
