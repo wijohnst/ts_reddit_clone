@@ -46,7 +46,6 @@ const SearchBar = ({ handleSearch }: Props) => {
           <SearchIcon />
         </Icon>
       </div>
-      <p>{searchString}</p>
     </div>
   );
 };

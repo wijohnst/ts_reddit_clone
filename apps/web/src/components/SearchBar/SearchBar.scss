@@ -1,19 +1,27 @@
+.icon-container {
+  position: absolute;
+  top: 55%;
+  left: 1.5%;
+  transform: translateY(-50%);
+}
+
 .searchbar-container {
   position: relative;
+  background-color: black;
 }
 
 input {
   width: 100%;
-  padding: 0.75rem 3.5rem;
+  padding: 0.5rem 3.5rem;
   border-radius: 5rem;
-  border: 1px solid gray;
+  border: 1px solid white;
 }
 
-.icon-container {
-  position: absolute;
-  top: 57%;
-  left: 1.5%;
-  transform: translateY(-50%);
+input::placeholder,
+input {
+  font-size: 1rem;
 }
-// increase font size of placeholder
-// bolden font barely
+
+input:focus {
+  outline: 2px solid #1280d4;
+}
