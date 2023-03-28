@@ -1,3 +1,14 @@
+.searchbar-container {
+  position: relative;
+  border-radius: 5rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem 3.5rem;
+  border: 1px solid white;
+}
+
 .icon-container {
   position: absolute;
   top: 55%;
@@ -5,23 +16,12 @@
   transform: translateY(-50%);
 }
 
-.searchbar-container {
-  position: relative;
-  background-color: black;
-}
-
-input {
-  width: 100%;
-  padding: 0.5rem 3.5rem;
-  border-radius: 5rem;
-  border: 1px solid white;
-}
-
 input::placeholder,
 input {
   font-size: 1rem;
 }
 
-input:focus {
+input:focus,
+.searchbar-container:hover {
   outline: 2px solid #3478cc;
 }
