@@ -4,7 +4,7 @@ import './Icon.scss';
 export enum iconColor {
   Default = 'black',
   Orange = '#EB5428',
-  Grey = '##DBE0E5',
+  Grey = '#888A8C',
 }
 
 export interface Props {

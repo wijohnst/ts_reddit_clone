@@ -12,12 +12,16 @@ export interface Props {
 
 // need to add jsdoc comment
 const SearchBar = ({ handleSearch }: Props) => {
+  /** Represents our input */
   const ref = useRef<HTMLInputElement>(null);
-  const [searchString, setSearchString] = useState<string>('');
-  const [inputFocus, setInputFocus] = useState<boolean>(false);
-  const [inputOpen, setInputOpen] = useState<boolean>(false);
 
-  /** Check if any elements focused + if it's input. If true, we set our focus to true */
+  /** Tracks the value our input currently holds */
+  const [searchString, setSearchString] = useState<string>('');
+
+  /** Tracks if our input is currently focused */
+  const [inputFocus, setInputFocus] = useState<boolean>(false);
+
+  /** Checks if any elements on page are focused + if it's the input. If true, we set our focus to true */
   useEffect(() => {
     if (document.hasFocus() && ref.current?.contains(document.activeElement)) {
       setInputFocus(true);
