@@ -10,8 +10,6 @@ export enum iconColor {
 export interface Props {
   children: React.ReactElement;
   colorProp?: iconColor;
-  /** What should happen when the icon is clicked? */
-  onClick?: () => void;
 }
 
 /**
@@ -21,12 +19,8 @@ export interface Props {
  * @param {React.ReactElement} props.children - The child element to render within the icon.
  * @returns {JSX.Element} - A JSX element representing the icon component.
  */
-const Icon = ({ children, colorProp = iconColor.Default, onClick }: Props) => {
-  return (
-    <div style={{ color: colorProp }} onClick={onClick}>
-      {children}
-    </div>
-  );
+const Icon = ({ children, colorProp = iconColor.Default }: Props) => {
+  return <div style={{ color: colorProp }}>{children}</div>;
 };
 
 export default Icon;

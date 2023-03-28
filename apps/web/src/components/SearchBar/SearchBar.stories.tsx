@@ -1,5 +1,5 @@
 import * as React from 'react';
-import SearchBar, { Props } from './SearchBar';
+import SearchBar from './SearchBar';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
@@ -10,7 +10,7 @@ export default {
   },
 } as ComponentMeta<typeof SearchBar>;
 
-const Template: ComponentStory<typeof SearchBar> = (args: Props) => (
+const Template: ComponentStory<typeof SearchBar> = (args) => (
   <SearchBar {...args} />
 );
 

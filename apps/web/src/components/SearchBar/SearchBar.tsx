@@ -1,8 +1,5 @@
 import * as React from 'react';
-import { useState, useRef, useEffect } from 'react';
-import Icon from '../Icon/Icon';
-import { ReactComponent as SearchIcon } from '../../assets/searchIcon.svg';
-import { iconColor } from '../Icon/Icon';
+import { useState } from 'react';
 import './SearchBar.scss';
 
 export interface Props {
@@ -26,13 +23,6 @@ const SearchBar = ({ handleSearch }: Props) => {
     }
   };
 
-  /**
-   * Handles click & invokes `handleSearch` func
-   */
-  const handleClick = (): void => {
-    handleSearch(searchString);
-  };
-
   return (
     <div className="searchbar-container">
       <input
@@ -42,11 +32,6 @@ const SearchBar = ({ handleSearch }: Props) => {
         onChange={(e) => setSearchString(e.target.value)}
         onKeyDown={handleKeyDown}
       />
-      <div className="icon-container">
-        <Icon onClick={handleClick} colorProp={iconColor.Grey}>
-          <SearchIcon />
-        </Icon>
-      </div>
     </div>
   );
 };
