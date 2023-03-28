@@ -12,21 +12,8 @@ export interface Props {
 
 // need to add jsdoc comment
 const SearchBar = ({ handleSearch }: Props) => {
-  /** Represents our input */
-  const ref = useRef<HTMLInputElement>(null);
-
-  /** Tracks the value our input currently holds */
+  /** Tracks the string value within input */
   const [searchString, setSearchString] = useState<string>('');
-
-  /** Tracks if our input is currently focused */
-  const [inputFocus, setInputFocus] = useState<boolean>(false);
-
-  /** Checks if any elements on page are focused + if it's the input. If true, we set our focus to true */
-  useEffect(() => {
-    if (document.hasFocus() && ref.current?.contains(document.activeElement)) {
-      setInputFocus(true);
-    }
-  }, []);
 
   /**
    * Handles 'Enter' key press & invokes `handleSearch` func
@@ -50,13 +37,10 @@ const SearchBar = ({ handleSearch }: Props) => {
     <div className="searchbar-container">
       <input
         type="search"
-        ref={ref}
         placeholder="Search Reddit"
         value={searchString}
         onChange={(e) => setSearchString(e.target.value)}
         onKeyDown={handleKeyDown}
-        onFocus={() => setInputFocus(true)}
-        onBlur={() => setInputFocus(false)}
       />
       <div className="icon-container">
         <Icon onClick={handleClick} colorProp={iconColor.Grey}>
