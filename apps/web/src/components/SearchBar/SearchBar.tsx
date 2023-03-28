@@ -15,6 +15,7 @@ const SearchBar = ({ handleSearch }: Props) => {
   const ref = useRef<HTMLInputElement>(null);
   const [searchString, setSearchString] = useState<string>('');
   const [inputFocus, setInputFocus] = useState<boolean>(false);
+  const [inputOpen, setInputOpen] = useState<boolean>(false);
 
   /** Check if any elements focused + if it's input. If true, we set our focus to true */
   useEffect(() => {
