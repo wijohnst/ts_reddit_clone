@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useRef } from 'react';
 import './SearchBar.scss';
 
 export interface Props {
@@ -9,33 +9,42 @@ export interface Props {
   customTestId?: string;
 }
 
-// need to add jsdoc comment
+/**
+ * A component that renders a searchbar
+ *
+ * @param {Object} props - The component props
+ * @param {function} handleSearch - Invoked when the user presses enter
+ * @param {string} customTestId - An optional custom test ID for the component
+ * @returns {React.ReactElement} - The rendered component
+ */
 const SearchBar = ({
   handleSearch,
   customTestId = 'searchbar',
 }: Props): React.ReactElement => {
-  /** Tracks the string value within input */
-  const [searchString, setSearchString] = useState<string>('');
+  const ref = useRef<HTMLInputElement>(null);
 
   /**
-   * Handles 'Enter' key press & invokes `handleSearch` func
+   * Handles a keydown event on the searchbar input
    *
-   * @param {React.KeyboardEvent} event - The keyboard event that triggered the function.
+   * @param {React.KeyboardEvent} - Keydown event.
+   * @returns {void}
    */
   const handleKeyDown = (event: React.KeyboardEvent): void => {
     if (event.key === 'Enter') {
-      handleSearch(searchString);
+      const searchString = ref.current?.value;
+      if (searchString !== undefined && searchString !== null) {
+        handleSearch(searchString);
+      }
     }
   };
 
   return (
     <div className="searchbar-container" data-testid="searchbar-container">
       <input
+        ref={ref}
         data-testid={customTestId}
         type="search"
         placeholder="Search Reddit"
-        value={searchString}
-        onChange={(e) => setSearchString(e.target.value)}
         onKeyDown={handleKeyDown}
       />
     </div>
