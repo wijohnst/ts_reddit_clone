@@ -1,0 +1,24 @@
+.feedsbar-feeditem-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+}
+
+.feedsbar-feeditem-label {
+  font-family: Verdana;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+// Remove default underline style for anchor tag link (note: tried applying this style in .feedsbar-feeditem-label and elsewhere but it would not override the style below, even with !important)
+a:-webkit-any-link {
+  text-decoration: none;
+}
