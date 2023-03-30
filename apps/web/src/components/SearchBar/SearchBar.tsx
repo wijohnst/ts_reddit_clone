@@ -25,7 +25,7 @@ const SearchBar = ({
   filterResults,
   customTestId = 'searchbar',
 }: Props): React.ReactElement => {
-  let ref = useRef<HTMLInputElement>(null);
+  const ref = useRef<HTMLInputElement>(null);
 
   /**
    * Handles a keydown event on the searchbar input
