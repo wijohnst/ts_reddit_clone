@@ -6,13 +6,13 @@ export interface Props {
   /** What happens when we use a searchstring to search for results? */
   handleSearch: (searchString: string) => void;
   /** What happens when a user begins typing what they're searching for? */
-  filterResults: (searchString: string) => string[];
-  /**  An optional custom test ID for the component.  */
+  filterResults: (searchString: string) => object[];
+  /** An optional custom test ID for the component.  */
   customTestId?: string;
 }
 
 /**
- * A component that renders a searchbar
+ * A component that renders a SearchBar
  *
  * @param {Object} props - The component props
  * @param {function} handleSearch - Invoked when the user presses enter
@@ -49,13 +49,18 @@ const SearchBar = ({
    */
   const handleOnChange = (): void => {
     const searchString = ref.current?.value;
-    if (searchString !== undefined && searchString !== null) {
+    if (
+      searchString !== undefined &&
+      searchString !== null &&
+      searchString !== ''
+    ) {
+      // commented because func causes error onChange because it is not currently being passed from parent
       //filterResults(searchString);
     }
   };
 
   /**
-   * Handles closing the open input
+   * Handles closing & clearing the input
    */
   const handleClose = (): void => {
     const input = ref.current;
@@ -65,7 +70,7 @@ const SearchBar = ({
   };
 
   /**
-   * Handles closing the open input
+   * Triggers handleSearch onclick of the searchIcon
    */
   const handleClick = (): void => {
     const searchString = ref.current?.value;
