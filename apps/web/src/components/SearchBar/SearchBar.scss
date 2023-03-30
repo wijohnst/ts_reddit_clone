@@ -2,6 +2,7 @@
   position: relative;
 }
 
+// input
 input {
   width: 100%;
   padding: 0.625rem 3rem;
@@ -23,13 +24,34 @@ input:focus {
   border-radius: 30px 30px 0px 0px;
 }
 
-.searchbar-container::after {
+// input default close button removal
+input[type='search']::-webkit-search-cancel-button {
+  display: none;
+}
+
+// searchbar-icon
+.search-icon::before {
   content: url('../../assets/searchIcon.svg');
   display: inline-block;
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
   top: 55%;
-  left: 2%;
+  left: 1.2rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+// close-icon
+.close-icon::after {
+  content: url('../../assets/closeIcon.svg');
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 50%;
+  right: 1.2rem;
+  width: 1.1rem;
+  height: 1.1rem;
   transform: translateY(-50%);
 }
