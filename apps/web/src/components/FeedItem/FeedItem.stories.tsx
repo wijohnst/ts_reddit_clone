@@ -1,5 +1,5 @@
 import * as React from 'react';
-import FeedItem, { Props } from './FeedItem';
+import FeedItem from './FeedItem';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ReactComponent as HomeIcon } from '../../assets/homeIcon.svg';
 
@@ -8,7 +8,7 @@ export default {
   component: FeedItem,
 } as ComponentMeta<typeof FeedItem>;
 
-const Template: ComponentStory<typeof FeedItem> = (args: Props) => (
+const Template: ComponentStory<typeof FeedItem> = (args) => (
   <FeedItem {...args} />
 );
 
