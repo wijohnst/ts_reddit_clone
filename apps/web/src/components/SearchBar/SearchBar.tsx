@@ -63,9 +63,13 @@ const SearchBar = ({
    * Handles closing & clearing the input
    */
   const handleClose = (): void => {
-    const input = ref.current;
-    if (input !== null && input.value !== null && input.value !== undefined) {
-      input.value = '';
+    const searchString = ref.current;
+    if (
+      searchString !== null &&
+      searchString.value !== null &&
+      searchString.value !== undefined
+    ) {
+      searchString.value = '';
     }
   };
 
