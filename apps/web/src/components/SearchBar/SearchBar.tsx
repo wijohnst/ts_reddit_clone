@@ -38,7 +38,11 @@ const SearchBar = ({
   ): void => {
     if (event.key === 'Enter') {
       const searchString = ref.current?.value;
-      if (searchString !== undefined && searchString !== null) {
+      if (
+        searchString !== undefined &&
+        searchString !== null &&
+        searchString !== ''
+      ) {
         handleSearch(searchString);
       }
     }
