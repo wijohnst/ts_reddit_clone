@@ -4,26 +4,57 @@ import SearchBar from './SearchBar';
 
 describe('SearchBar', () => {
   const handleSearch = jest.fn();
+  const filterResults = jest.fn();
 
-  // testing for Icon component
-  it('Should have an SVG icon', () => {
-    render(<SearchBar handleSearch={handleSearch} />);
-    expect(screen.getByTestId('searchbar-container')).toBeInTheDocument();
+  it('should have a img element', () => {
+    render(
+      <SearchBar handleSearch={handleSearch} filterResults={filterResults} />
+    );
+    expect(
+      screen.getByTestId('searchbar-container-search-icon')
+    ).toBeInTheDocument();
   });
 
-  // testing for input element
   it('should have a input element', () => {
-    render(<SearchBar handleSearch={handleSearch} />);
+    render(
+      <SearchBar handleSearch={handleSearch} filterResults={filterResults} />
+    );
     expect(screen.getByTestId('searchbar')).toBeInTheDocument();
   });
 
-  //testing that our handleSearch fires
+  it('Should trigger handleFilter onChange of the input', async () => {
+    const searchString = 'Test String';
+    render(
+      <SearchBar handleSearch={handleSearch} filterResults={filterResults} />
+    );
+
+    await userEvent.type(screen.getByTestId('searchbar'), searchString);
+
+    expect(filterResults).toHaveBeenCalledWith(searchString);
+  });
+
   it('Should trigger handleSearch via handleKeyDown', async () => {
     const searchString = 'Test String';
-    render(<SearchBar handleSearch={handleSearch} />);
+    render(
+      <SearchBar handleSearch={handleSearch} filterResults={filterResults} />
+    );
     await userEvent.type(
       screen.getByTestId('searchbar'),
       searchString + '{enter}'
+    );
+    expect(handleSearch).toHaveBeenCalledWith(searchString);
+  });
+
+  it('Should trigger handleSearch via onClick of searchIcon', async () => {
+    const searchString = 'Test String';
+    render(
+      <SearchBar handleSearch={handleSearch} filterResults={filterResults} />
+    );
+
+    await userEvent.type(screen.getByTestId('searchbar'), searchString);
+
+    await userEvent.click(
+      screen.getByTestId('searchbar-container-search-icon')
     );
     expect(handleSearch).toHaveBeenCalledWith(searchString);
   });

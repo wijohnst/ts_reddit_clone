@@ -55,14 +55,13 @@ const SearchBar = ({
    */
   const handleOnChange = (): void => {
     const searchString = ref.current?.value;
-
     if (
       searchString !== undefined &&
       searchString !== null &&
       searchString !== ''
     ) {
       // commented bc func causes error onChange as it is not being passed from parent
-      //filterResults(searchString);
+      filterResults(searchString);
     }
   };
 
@@ -82,7 +81,12 @@ const SearchBar = ({
 
   return (
     <div className="searchbar-container" data-testid="searchbar-container">
-      <img src={SearchIcon} alt="search-icon" />
+      <img
+        src={SearchIcon}
+        alt="search-icon"
+        data-testid="searchbar-container-search-icon"
+        onClick={handleClick}
+      />
       <input
         ref={ref}
         data-testid={customTestId}
