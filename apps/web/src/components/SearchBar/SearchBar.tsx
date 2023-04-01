@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useRef } from 'react';
 import './SearchBar.scss';
+import SearchIcon from '../../assets/searchIcon.svg';
 
 export interface Props {
   /** What happens when we use a searchstring to search for results? */
@@ -20,6 +21,7 @@ export interface Props {
  * @param {string} customTestId - An optional custom test ID for the component
  * @returns {React.ReactElement} - The rendered component
  */
+
 const SearchBar = ({
   handleSearch,
   filterResults,
@@ -53,27 +55,14 @@ const SearchBar = ({
    */
   const handleOnChange = (): void => {
     const searchString = ref.current?.value;
+
     if (
       searchString !== undefined &&
       searchString !== null &&
       searchString !== ''
     ) {
-      // commented because func causes error onChange because it is not currently being passed from parent
+      // commented bc func causes error onChange as it is not being passed from parent
       //filterResults(searchString);
-    }
-  };
-
-  /**
-   * Handles closing & clearing the input
-   */
-  const handleClose = (): void => {
-    const searchString = ref.current;
-    if (
-      searchString !== null &&
-      searchString.value !== null &&
-      searchString.value !== undefined
-    ) {
-      searchString.value = '';
     }
   };
 
@@ -93,7 +82,7 @@ const SearchBar = ({
 
   return (
     <div className="searchbar-container" data-testid="searchbar-container">
-      <span className="search-icon" onClick={handleClick}></span>
+      <img src={SearchIcon} alt="search-icon" />
       <input
         ref={ref}
         data-testid={customTestId}
@@ -102,7 +91,6 @@ const SearchBar = ({
         onKeyDown={handleKeyDown}
         onChange={handleOnChange}
       />
-      <span className="close-icon" onClick={handleClose}></span>
     </div>
   );
 };
