@@ -21,12 +21,12 @@ export interface Props {
  * @param {string} customTestId - An optional custom test ID for the component
  * @returns {React.ReactElement} - The rendered component
  */
-
 const SearchBar = ({
   handleSearch,
   filterResults,
   customTestId = 'searchbar',
 }: Props): React.ReactElement => {
+  /** references input element */
   const ref = useRef<HTMLInputElement>(null);
 
   /**

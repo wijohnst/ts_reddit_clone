@@ -6,7 +6,7 @@ describe('SearchBar', () => {
   const handleSearch = jest.fn();
   const filterResults = jest.fn();
 
-  it('should have a img element', () => {
+  it('should have an img element', () => {
     render(
       <SearchBar handleSearch={handleSearch} filterResults={filterResults} />
     );
