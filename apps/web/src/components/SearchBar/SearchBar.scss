@@ -1,5 +1,19 @@
 .searchbar-container {
   position: relative;
+  border-radius: 5rem;
+}
+
+.searchbar-container:hover {
+  outline: 0.125rem solid #3478cc;
+}
+
+// removing sb-container outline when input is focused
+.searchbar-container:focus-within:hover {
+  outline: none;
+}
+
+.searchbar-container input:focus {
+  border-radius: 1.8rem 1.8rem 0rem 0rem;
 }
 
 // input
@@ -15,12 +29,12 @@ input {
   font-size: 1rem;
 }
 
-input:hover,
-input:focus {
+input:hover {
   outline: 0.125rem solid #3478cc;
 }
 
 input:focus {
+  outline: 0.125rem solid #3478cc;
   border-radius: 1.8rem 1.8rem 0rem 0rem;
 }
 
