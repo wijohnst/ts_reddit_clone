@@ -40,11 +40,7 @@ const SearchBar = ({
   ): void => {
     if (event.key === 'Enter') {
       const searchString = ref.current?.value;
-      if (
-        searchString !== undefined &&
-        searchString !== null &&
-        searchString !== ''
-      ) {
+      if (!!searchString) {
         handleSearch(searchString);
       }
     }
@@ -55,13 +51,9 @@ const SearchBar = ({
    */
   const handleOnChange = (): void => {
     const searchString = ref.current?.value;
-    if (
-      searchString !== undefined &&
-      searchString !== null &&
-      searchString !== ''
-    ) {
+    if (!!searchString) {
       // commented bc func causes error onChange as it is not being passed from parent
-      filterResults(searchString);
+      //  filterResults(searchString);
     }
   };
 
@@ -70,11 +62,7 @@ const SearchBar = ({
    */
   const handleClick = (): void => {
     const searchString = ref.current?.value;
-    if (
-      searchString !== null &&
-      searchString !== undefined &&
-      searchString !== ''
-    ) {
+    if (!!searchString) {
       handleSearch(searchString);
     }
   };
