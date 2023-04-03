@@ -3,10 +3,11 @@ import './Icon.scss';
 
 export enum iconColor {
   Default = 'black',
-  Orange = '#ff2800',
+  Orange = '#EB5428',
+  Grey = '#888A8C',
 }
 
-interface Props {
+export interface Props {
   /** What should be displayed? */
   children: React.ReactElement;
   /** The color of the Icon */
