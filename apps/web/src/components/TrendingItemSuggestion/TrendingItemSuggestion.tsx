@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './TrendingItemSuggestion.scss';
 import { ReactComponent as GoCircleIcon } from '../../assets/goCircleIcon.svg';
 import Icon from '../Icon/Icon';
 
@@ -24,7 +25,7 @@ const TrendingItemSuggestion = ({ metaData }: Props) => {
   const { subRedditIcon, subRedditName } = targetSubreddit;
 
   return (
-    <li className="list-item">
+    <li>
       <div className="list-item-text-container">
         <div className="list-item-heading">
           <Icon>
