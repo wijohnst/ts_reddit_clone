@@ -11,7 +11,7 @@ export interface Props {
 /**
  * Renders a FeedItem component
  *
- * @param {Object} props - The props object.
+ * @param {Props} props - The props object.
  * @param {React.ReactElement} props.svg - The SVG icon to display
  * @param {string} props.label - The text to show in the label element.
  * @param {string} props.href - The URL to use in the anchor element.
