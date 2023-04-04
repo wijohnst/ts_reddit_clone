@@ -39,7 +39,7 @@ input:focus {
 }
 
 // searchbar-icon
-img {
+.searchbar-container-search-icon {
   position: absolute;
   top: 50%;
   left: 1.2rem;
@@ -48,8 +48,8 @@ img {
   opacity: 0.7;
 }
 
-.searchbar-container:focus-within img,
-img:hover {
+.searchbar-container:focus-within .searchbar-container-search-icon,
+.searchbar-container-search-icon:hover {
   opacity: 1;
 }
 

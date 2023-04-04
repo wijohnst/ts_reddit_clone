@@ -21,7 +21,7 @@ const Template: ComponentStory<typeof TrendingItemSuggestion> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   metaData: {
-    URL: 'https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
+    URL: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNvZGV8ZW58MHx8MHx8&w=1000&q=80',
     trendingSuggestionHeading: 'Search Preview Item Heading',
     trendingSuggestionSummary: 'Search Preview Item Summary',
     targetSubreddit: {

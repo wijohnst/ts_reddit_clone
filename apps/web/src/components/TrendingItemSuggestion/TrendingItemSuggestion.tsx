@@ -43,7 +43,8 @@ const TrendingItemSuggestion = ({ metaData, handleClick }: Props) => {
             </div>
           </div>
           <div className="list-item-preview-image-container">
-            <img src={URL} alt="preview-image" />
+            {' '}
+            <img className="distinct" src={URL} alt="preview-image" />
           </div>
         </>
       )}
