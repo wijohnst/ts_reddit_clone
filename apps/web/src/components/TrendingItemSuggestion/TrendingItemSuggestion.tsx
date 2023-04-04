@@ -14,9 +14,14 @@ interface Props {
     };
   };
   handleClick: () => void;
+  customTestId?: string;
 }
 
-const TrendingItemSuggestion = ({ metaData, handleClick }: Props) => {
+const TrendingItemSuggestion = ({
+  metaData,
+  handleClick,
+  customTestId = 'list-item',
+}: Props) => {
   const {
     URL,
     trendingSuggestionHeading,
@@ -26,25 +31,40 @@ const TrendingItemSuggestion = ({ metaData, handleClick }: Props) => {
   const { subRedditIcon, subRedditName } = targetSubreddit;
 
   return (
-    <li onClick={handleClick} className={!metaData ? 'loading' : ''}>
+    <li
+      onClick={handleClick}
+      className={!metaData ? 'loading' : ''}
+      data-testid={customTestId}
+    >
       {metaData && (
         <>
           <div className="list-item-text-container">
             <div className="list-item-heading">
-              <Icon>
+              <Icon customTestId="list-item-heading-icon">
                 <GoCircleIcon />
               </Icon>
-              <h1>{trendingSuggestionHeading}</h1>
+              <h1 data-testid="list-item-heading">
+                {trendingSuggestionHeading}
+              </h1>
             </div>
-            <h2> {trendingSuggestionSummary}</h2>
+            <h2 data-testid="list-item-summary">
+              {' '}
+              {trendingSuggestionSummary}
+            </h2>
             <div className="list-item-target-subreddit">
-              <Icon>{subRedditIcon}</Icon>
-              <p>{subRedditName}</p>
+              <Icon customTestId="list-item-subreddit-icon">
+                {subRedditIcon}
+              </Icon>
+              <p data-testid="list-item-subreddit-link">{subRedditName}</p>
             </div>
           </div>
           <div className="list-item-preview-image-container">
-            {' '}
-            <img className="distinct" src={URL} alt="preview-image" />
+            <img
+              data-testid="list-item-image"
+              className="distinct"
+              src={URL}
+              alt="preview-image"
+            />
           </div>
         </>
       )}
