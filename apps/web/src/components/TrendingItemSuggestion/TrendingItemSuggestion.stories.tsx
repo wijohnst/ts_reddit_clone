@@ -33,6 +33,4 @@ Default.args = {
       subRedditName: 'r/SubbreditLink',
     },
   },
-
-  handleClick: () => console.log('Handle Click'),
 };
