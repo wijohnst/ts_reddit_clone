@@ -8,7 +8,10 @@ import './TrendingItemSuggestion.scss';
 export default {
   title: 'Components/TrendingItemSuggestion',
   component: TrendingItemSuggestion,
-  argTypes: { metaData: { control: 'object' }, onClick: { action: 'clicked' } },
+  argTypes: {
+    metaData: { control: 'object' },
+    handleClick: { action: 'clicked' },
+  },
 } as ComponentMeta<typeof TrendingItemSuggestion>;
 
 const Template: ComponentStory<typeof TrendingItemSuggestion> = (args) => (
@@ -31,5 +34,5 @@ Default.args = {
     },
   },
 
-  onClick: () => console.log('Handle Click'),
+  handleClick: () => console.log('Handle Click'),
 };

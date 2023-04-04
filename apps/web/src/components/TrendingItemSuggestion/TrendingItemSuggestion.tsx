@@ -13,10 +13,10 @@ interface Props {
       subRedditName: string;
     };
   };
-  onClick: () => void;
+  handleClick: () => void;
 }
 
-const TrendingItemSuggestion = ({ metaData, onClick }: Props) => {
+const TrendingItemSuggestion = ({ metaData, handleClick }: Props) => {
   const {
     URL,
     trendingSuggestionHeading,
@@ -26,23 +26,27 @@ const TrendingItemSuggestion = ({ metaData, onClick }: Props) => {
   const { subRedditIcon, subRedditName } = targetSubreddit;
 
   return (
-    <li onClick={onClick}>
-      <div className="list-item-text-container">
-        <div className="list-item-heading">
-          <Icon>
-            <GoCircleIcon />
-          </Icon>
-          <h1>{trendingSuggestionHeading}</h1>
-        </div>
-        <h2> {trendingSuggestionSummary}</h2>
-        <div className="list-item-target-subreddit">
-          <Icon>{subRedditIcon}</Icon>
-          <p>{subRedditName}</p>
-        </div>
-      </div>
-      <div className="list-item-preview-image-container">
-        <img src={URL} alt="preview-image" />
-      </div>
+    <li onClick={handleClick} className={!metaData ? 'loading' : ''}>
+      {metaData && (
+        <>
+          <div className="list-item-text-container">
+            <div className="list-item-heading">
+              <Icon>
+                <GoCircleIcon />
+              </Icon>
+              <h1>{trendingSuggestionHeading}</h1>
+            </div>
+            <h2> {trendingSuggestionSummary}</h2>
+            <div className="list-item-target-subreddit">
+              <Icon>{subRedditIcon}</Icon>
+              <p>{subRedditName}</p>
+            </div>
+          </div>
+          <div className="list-item-preview-image-container">
+            <img src={URL} alt="preview-image" />
+          </div>
+        </>
+      )}
     </li>
   );
 };

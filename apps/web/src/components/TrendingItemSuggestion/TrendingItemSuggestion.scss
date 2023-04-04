@@ -7,6 +7,15 @@ li {
   gap: 10;
 }
 
+.loading {
+  background-color: #d9dbdc;
+}
+
+li:hover {
+  cursor: pointer;
+  background-color: #d9dbdc;
+}
+
 .list-item-text-container {
   width: 70%;
   height: 6.875rem;
