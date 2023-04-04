@@ -13,9 +13,10 @@ interface Props {
       subRedditName: string;
     };
   };
+  onClick: () => void;
 }
 
-const TrendingItemSuggestion = ({ metaData }: Props) => {
+const TrendingItemSuggestion = ({ metaData, onClick }: Props) => {
   const {
     URL,
     trendingSuggestionHeading,
@@ -25,7 +26,7 @@ const TrendingItemSuggestion = ({ metaData }: Props) => {
   const { subRedditIcon, subRedditName } = targetSubreddit;
 
   return (
-    <li>
+    <li onClick={onClick}>
       <div className="list-item-text-container">
         <div className="list-item-heading">
           <Icon>
@@ -45,4 +46,5 @@ const TrendingItemSuggestion = ({ metaData }: Props) => {
     </li>
   );
 };
+
 export default TrendingItemSuggestion;
