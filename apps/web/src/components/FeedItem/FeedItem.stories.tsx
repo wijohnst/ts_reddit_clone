@@ -9,7 +9,9 @@ export default {
 } as ComponentMeta<typeof FeedItem>;
 
 const Template: ComponentStory<typeof FeedItem> = (args) => (
-  <FeedItem {...args} />
+  <div style={{ height: '35px' }}>
+    <FeedItem {...args} />
+  </div>
 );
 
 export const Default = Template.bind({});
