@@ -2,7 +2,7 @@ import * as React from 'react';
 import TrendingItemSuggestion from './TrendingItemSuggestion';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import './TrendingItemSuggestion.scss';
-import { metaData } from './TISmetaData';
+import { metaData } from './TrendingItemSuggestion.utils.tsx';
 
 export default {
   title: 'Components/TrendingItemSuggestion',
@@ -22,4 +22,4 @@ export const Default = Template.bind({});
 Default.args = { metaData: metaData, isLoading: false };
 
 export const Loading = Template.bind({});
-Loading.args = { metaData: metaData, isLoading: true };
+Loading.args = { ...Default.args, isLoading: true };
