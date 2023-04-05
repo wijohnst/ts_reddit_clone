@@ -4,6 +4,7 @@ import { ReactComponent as GoCircleIcon } from '../../assets/goCircleIcon.svg';
 import Icon from '../Icon/Icon';
 
 interface Props {
+  /** Data from parent component to populate component */
   metaData: {
     URL: string;
     trendingSuggestionHeading: string;
@@ -13,8 +14,11 @@ interface Props {
       subRedditName: string;
     };
   };
+  /** what happens when we click the component? */
   handleClick: () => void;
+  /** An optional custom test ID for the component.  */
   customTestId?: string;
+  /** Has the metaData been fetched? */
   isLoading: boolean;
 }
 
