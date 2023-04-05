@@ -22,7 +22,7 @@ describe('TrendingItemSuggestion', () => {
       <TrendingItemSuggestion
         metaData={metaData}
         handleClick={handleClick}
-        isLoading={true}
+        isLoading={false}
       />
     );
     expect(screen.getByTestId('list-item-heading-icon')).toBeInTheDocument();
@@ -33,7 +33,7 @@ describe('TrendingItemSuggestion', () => {
       <TrendingItemSuggestion
         metaData={metaData}
         handleClick={handleClick}
-        isLoading={true}
+        isLoading={false}
       />
     );
     expect(screen.getByTestId('list-item-heading')).toBeInTheDocument();
@@ -44,7 +44,7 @@ describe('TrendingItemSuggestion', () => {
       <TrendingItemSuggestion
         metaData={metaData}
         handleClick={handleClick}
-        isLoading={true}
+        isLoading={false}
       />
     );
     expect(screen.getByTestId('list-item-summary')).toBeInTheDocument();
@@ -55,7 +55,7 @@ describe('TrendingItemSuggestion', () => {
       <TrendingItemSuggestion
         metaData={metaData}
         handleClick={handleClick}
-        isLoading={true}
+        isLoading={false}
       />
     );
     expect(screen.getByTestId('list-item-subreddit-icon')).toBeInTheDocument();
@@ -66,7 +66,7 @@ describe('TrendingItemSuggestion', () => {
       <TrendingItemSuggestion
         metaData={metaData}
         handleClick={handleClick}
-        isLoading={true}
+        isLoading={false}
       />
     );
     expect(screen.getByTestId('list-item-subreddit-link')).toBeInTheDocument();
@@ -77,7 +77,7 @@ describe('TrendingItemSuggestion', () => {
       <TrendingItemSuggestion
         metaData={metaData}
         handleClick={handleClick}
-        isLoading={true}
+        isLoading={false}
       />
     );
     expect(screen.getByTestId('list-item-image')).toBeInTheDocument();
@@ -88,7 +88,7 @@ describe('TrendingItemSuggestion', () => {
       <TrendingItemSuggestion
         handleClick={handleClick}
         metaData={metaData}
-        isLoading={true}
+        isLoading={false}
       />
     );
 
