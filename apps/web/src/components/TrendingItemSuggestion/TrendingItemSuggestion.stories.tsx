@@ -1,9 +1,8 @@
 import * as React from 'react';
 import TrendingItemSuggestion from './TrendingItemSuggestion';
-import { ReactComponent as ReactIcon } from '../../assets/reactSubRedditIcon.svg';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Icon from '../Icon/Icon';
 import './TrendingItemSuggestion.scss';
+import { metaData } from './TISmetaData';
 
 export default {
   title: 'Components/TrendingItemSuggestion',
@@ -11,6 +10,7 @@ export default {
   argTypes: {
     metaData: { control: 'object' },
     handleClick: { action: 'clicked' },
+    isLoading: { control: 'boolean' },
   },
 } as ComponentMeta<typeof TrendingItemSuggestion>;
 
@@ -19,18 +19,7 @@ const Template: ComponentStory<typeof TrendingItemSuggestion> = (args) => (
 );
 
 export const Default = Template.bind({});
-Default.args = {
-  metaData: {
-    URL: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNvZGV8ZW58MHx8MHx8&w=1000&q=80',
-    trendingSuggestionHeading: 'Search Preview Item Heading',
-    trendingSuggestionSummary: 'Search Preview Item Summary',
-    targetSubreddit: {
-      subRedditIcon: (
-        <Icon>
-          <ReactIcon />
-        </Icon>
-      ),
-      subRedditName: 'r/SubbreditLink',
-    },
-  },
-};
+Default.args = { metaData: metaData, isLoading: false };
+
+export const Loading = Template.bind({});
+Loading.args = { metaData: metaData, isLoading: true };

@@ -15,12 +15,14 @@ interface Props {
   };
   handleClick: () => void;
   customTestId?: string;
+  isLoading: boolean;
 }
 
 const TrendingItemSuggestion = ({
   metaData,
   handleClick,
   customTestId = 'list-item',
+  isLoading,
 }: Props) => {
   const {
     URL,
@@ -31,12 +33,8 @@ const TrendingItemSuggestion = ({
   const { subRedditIcon, subRedditName } = targetSubreddit;
 
   return (
-    <li
-      onClick={handleClick}
-      className={!metaData ? 'loading' : ''}
-      data-testid={customTestId}
-    >
-      {metaData && (
+    <li onClick={handleClick} data-testid={customTestId}>
+      {!isLoading && (
         <>
           <div className="list-item-text-container">
             <div className="list-item-heading">
