@@ -1,0 +1,68 @@
+li {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  max-height: 8.75rem;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  gap: 10;
+}
+
+.loading {
+  background-color: #d9dbdc;
+}
+
+li:hover {
+  cursor: pointer;
+  background-color: #d9dbdc;
+}
+
+.list-item-text-container {
+  height: 6.875rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.list-item-heading {
+  display: flex;
+}
+
+h1,
+h2 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+h1 {
+  padding: 0.3125rem;
+}
+
+h2 {
+  font-weight: 400;
+  color: #888a8c;
+  padding: 0 2rem;
+}
+
+.list-item-target-subreddit {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+p {
+  margin: 0;
+  font-size: 0.75rem;
+  padding: 0.3125rem;
+  font-weight: 500;
+}
+
+.list-item-preview-image-container {
+  height: 6.875rem;
+  display: flex;
+}
+
+.list-item-preview-image-container img {
+  max-width: 10rem;
+  border-radius: 0.25rem;
+}

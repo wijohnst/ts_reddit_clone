@@ -73,6 +73,7 @@ const SearchBar = ({
         src={SearchIcon}
         alt="search-icon"
         data-testid="searchbar-container-search-icon"
+        className="searchbar-container-search-icon"
         onClick={handleClick}
       />
       <input
