@@ -1,0 +1,17 @@
+:root {
+  /* Light Mode */
+  --black: #1c1c1c;
+  --blue: #3478cc;
+  --whitesmoke: #dbe0e5;
+  --gray: #888a8c;
+  --orange: #eb5428;
+  --white: #ffffff;
+
+  /* Dark Mode */
+  --black-dark: var(--white);
+  --blue-dark: var(--blue);
+  --whitesmoke-dark: var(--whitesmoke);
+  --gray-dark: var(--gray);
+  --orange-dark: var(--orange);
+  --white-dark: var(--black);
+}
