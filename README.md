@@ -102,7 +102,24 @@ In order to import our SVGs as React components, we uuse the ReactComponent impo
 
 To streamline the process of converting SVG icons to React components, we've included a script in our package.json file: `"build:svgs": "svgr --icon --out-dir src/assets"`. Running this script each time we add a new icon to our assets folder ensures that we don't forget to convert it and that we're always up-to-date with the latest icons in our application.
 
-=======
+### Global Theme / Color Scheme
+
+# Defining the Color Theme
+
+Create a `Colors.scss` file to define a set of colors that will be used throughout the project. Use the `:root` pseudo-class to define the list of colors in the `Colors.scss` file.
+
+# Defining Global Styles
+
+Create a `Global.scss` file to define global styles that will be used throughout the project. Import the Colors.scss file into the `Global.scss` file so that the color variables can be used in the global styles.
+
+# Importing Global Styles
+
+Import the `Global.scss` file into your main SCSS file so that the global styles are applied to the entire application. You can then simply use the css function `var()` to call the color you'd like to use. For example, `var(--black)`.
+
+# Using Storybook
+
+Global styles will not be applied to the Storybook stories by default.
+To make the global styles available in Storybook, add the import statement for the `Global.scss` file to the `preview.js` file in the Storybook configuration. This ensures that the stories are consistent with the rest of the application.
 
 # Back-End / API
 
