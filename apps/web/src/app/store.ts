@@ -1,12 +1,12 @@
-import { configureStore } from '@reduxjs/toolkit'
-import applicationReducer from '../features/application/applicationSlice'
+import { configureStore } from '@reduxjs/toolkit';
+import displaySuggestionsReducer from '../features/TrendingItemSuggestion/DisplaySuggestionsSlice';
 
 export const store = configureStore({
   reducer: {
-    application: applicationReducer,
+    displaySuggestions: displaySuggestionsReducer,
   },
-})
+});
 
-export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof store.getState>;
 
-export type AppDispatch = typeof store.dispatch
+export type AppDispatch = typeof store.dispatch;
