@@ -1,0 +1,25 @@
+a,
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+.feedsbar-feeditem-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  height: 100%;
+}
+
+.feedsbar-feeditem-label {
+  font-family: Verdana;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+}
