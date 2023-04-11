@@ -14,7 +14,7 @@ interface Props {
       subRedditName: string;
     };
   };
-  /** what happens when we click the component? */
+  /** What happens when we click the component? */
   handleClick: () => void;
   /** An optional custom test ID for the component.  */
   customTestId?: string;
