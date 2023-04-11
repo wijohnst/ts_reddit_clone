@@ -35,9 +35,13 @@ const TrendingItemSuggestion = ({
     targetSubreddit,
   } = metaData;
   const { subRedditIcon, subRedditName } = targetSubreddit;
-
+  console.log(isLoading);
   return (
-    <li onClick={handleClick} data-testid={customTestId}>
+    <li
+      onClick={handleClick}
+      data-testid={customTestId}
+      className={isLoading ? 'loading' : ''}
+    >
       {!isLoading && (
         <>
           <div className="list-item-text-container">

@@ -5,16 +5,16 @@ li {
   max-height: 8.75rem;
   border-radius: 0.25rem;
   padding: 1rem;
-  gap: 10;
-}
-
-.loading {
-  background-color: #d9dbdc;
+  margin-bottom: 3px;
 }
 
 li:hover {
   cursor: pointer;
   background-color: #d9dbdc;
+}
+
+.loading li {
+  background-color: var(--gray);
 }
 
 .list-item-text-container {

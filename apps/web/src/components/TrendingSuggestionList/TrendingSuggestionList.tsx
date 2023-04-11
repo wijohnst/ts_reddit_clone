@@ -1,20 +1,41 @@
 import * as React from 'react';
 import { useQuery } from 'react-query';
-import { useAppSelector } from '../../app/hooks';
-import { selectDisplaySuggestions } from '../../features/TrendingItemSuggestion/DisplaySuggestionsSlice';
+import TrendingItemSuggestion from '../TrendingItemSuggestion/TrendingItemSuggestion';
+import './TrendingSuggestionList.scss';
+
+type Item = {
+  id: number;
+  URL: string;
+  trendingSuggestionHeading: string;
+  trendingSuggestionSummary: string;
+  targetSubreddit: {
+    subRedditIcon: React.ReactElement;
+    subRedditName: string;
+  };
+};
 
 const TrendingSuggestionList = (): React.ReactElement => {
-  const displayTrendingList = useAppSelector(selectDisplaySuggestions);
-  const { isLoading, error, data } = useQuery('suggested-items', async () => {
-    const response = await fetch('https://fakestoreapi.com/products?limit=4');
+  const { isLoading, data } = useQuery('suggested-items', async () => {
+    const response = await fetch('../../Data/SuggestedItems.json');
     const data = await response.json();
-    console.log(data);
     return data;
   });
 
+  const dummyfunc = () => {};
+
   return (
-    <ul className={isLoading ? '' : 'hide'}>
-      <p>{displayTrendingList.toString()}</p>
+    <ul className={isLoading ? 'loading-suggestion-list' : ''}>
+      {data &&
+        data.map((item: Item) => {
+          return (
+            <TrendingItemSuggestion
+              key={item.id}
+              metaData={item}
+              handleClick={dummyfunc}
+              isLoading={isLoading}
+            />
+          );
+        })}
     </ul>
   );
 };
