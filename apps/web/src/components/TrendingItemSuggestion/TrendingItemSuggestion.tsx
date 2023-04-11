@@ -35,7 +35,7 @@ const TrendingItemSuggestion = ({
     targetSubreddit,
   } = metaData;
   const { subRedditIcon, subRedditName } = targetSubreddit;
-  console.log(isLoading);
+
   return (
     <li
       onClick={handleClick}

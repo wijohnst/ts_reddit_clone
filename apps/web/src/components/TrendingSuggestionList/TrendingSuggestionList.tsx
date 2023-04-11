@@ -15,11 +15,14 @@ type Item = {
 };
 
 const TrendingSuggestionList = (): React.ReactElement => {
-  const { isLoading, data } = useQuery('suggested-items', async () => {
-    const response = await fetch('../../Data/SuggestedItems.json');
-    const data = await response.json();
-    return data;
-  });
+  const { isLoading, data, isFetching, isFetched } = useQuery(
+    'suggested-items',
+    async () => {
+      const response = await fetch('../../Data/SuggestedItems.json');
+      const data = await response.json();
+      return data;
+    }
+  );
 
   const dummyfunc = () => {};
 
@@ -32,7 +35,7 @@ const TrendingSuggestionList = (): React.ReactElement => {
               key={item.id}
               metaData={item}
               handleClick={dummyfunc}
-              isLoading={isLoading}
+              isLoading={isFetching || !isFetched}
             />
           );
         })}
