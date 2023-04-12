@@ -21,7 +21,13 @@ interface Item {
   };
 }
 
-const TrendingSuggestionList = (): React.ReactElement => {
+interface Props {
+  customTestId?: string;
+}
+
+const TrendingSuggestionList = ({
+  customTestId = 'suggestion-list',
+}: Props): React.ReactElement => {
   const { isLoading, data, isFetching, isFetched } = useQuery(
     'suggested-items',
     async () => {
@@ -31,17 +37,21 @@ const TrendingSuggestionList = (): React.ReactElement => {
     }
   );
 
-  const dummyfunc = () => {};
+  const handleClick = () => {};
 
   return (
-    <ul className={isLoading ? 'loading-suggestion-list' : ''}>
+    <ul
+      className={isLoading ? 'loading-suggestion-list' : ''}
+      data-testid={customTestId}
+    >
       {data &&
         data.map((item: Item) => {
           return (
             <TrendingItemSuggestion
+              customTestId="list-item"
               key={item.id}
               metaData={item}
-              handleClick={dummyfunc}
+              handleClick={handleClick}
               isLoading={isFetching || !isFetched}
             />
           );

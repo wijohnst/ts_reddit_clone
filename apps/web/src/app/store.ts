@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import displaySuggestionsReducer from '../features/TrendingItemSuggestion/DisplaySuggestionsSlice';
+import applicationReducer from '../features/application/applicationSlice';
 
 export const store = configureStore({
   reducer: {
-    displaySuggestions: displaySuggestionsReducer,
+    application: applicationReducer,
   },
 });
 

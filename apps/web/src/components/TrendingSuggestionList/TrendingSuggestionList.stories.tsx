@@ -21,7 +21,7 @@ const Template: ComponentStory<typeof TrendingSuggestionList> = () => (
 );
 
 export const Default = Template.bind({});
-Default.args = { isLoading: false };
+//Default.args = { isLoading: false };
 
 export const Loading = Template.bind({});
-Loading.args = { isLoading: true };
+//Loading.args = { isLoading: true };

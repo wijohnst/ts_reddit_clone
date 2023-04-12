@@ -2,8 +2,6 @@ import * as React from 'react';
 import { useRef } from 'react';
 import './SearchBar.scss';
 import SearchIcon from '../../assets/searchIcon.svg';
-import { useAppDispatch } from '../../app/hooks';
-import { isDisplayed } from '../../features/TrendingItemSuggestion/DisplaySuggestionsSlice';
 
 export interface Props {
   /** What happens when we use a searchstring to search for results? */
@@ -31,9 +29,6 @@ const SearchBar = ({
   /** references input element */
   const ref = useRef<HTMLInputElement>(null);
 
-  /** Dispatches actions to the Redux store */
-  const dispatch = useAppDispatch();
-
   /**
    * Handles a keydown event on the searchbar input
    *
@@ -57,12 +52,7 @@ const SearchBar = ({
   const handleOnChange = (): void => {
     const searchString = ref.current?.value;
     if (!!searchString) {
-      handleBlur();
-      // commented bc func causes error onChange as it is not being passed from parent
       //  filterResults(searchString);
-    }
-    if (searchString === '') {
-      dispatch(isDisplayed(true));
     }
   };
 
@@ -74,17 +64,6 @@ const SearchBar = ({
     if (!!searchString) {
       handleSearch(searchString);
     }
-  };
-
-  const handleFocus = (): void => {
-    const searchString = ref.current?.value;
-    if (!searchString) {
-      dispatch(isDisplayed(true));
-    }
-  };
-
-  const handleBlur = (): void => {
-    dispatch(isDisplayed(false));
   };
 
   return (
@@ -103,8 +82,6 @@ const SearchBar = ({
         placeholder="Search Reddit"
         onKeyDown={handleKeyDown}
         onChange={handleOnChange}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
       />
     </div>
   );
