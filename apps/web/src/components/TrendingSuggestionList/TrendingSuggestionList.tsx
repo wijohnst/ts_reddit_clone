@@ -1,11 +1,8 @@
 import * as React from 'react';
-import { useQuery } from 'react-query';
 import TrendingItemSuggestion from '../TrendingItemSuggestion/TrendingItemSuggestion';
 import './TrendingSuggestionList.scss';
 
-interface Item {
-  /** How we identify each item */
-  id: number;
+interface MetaDataItem {
   /** How can we view the suggested post? */
   URL: string;
   /** Suggestion Title */
@@ -22,37 +19,36 @@ interface Item {
 }
 
 interface Props {
+  /** What data are we mapping? */
+  metaDataItems: MetaDataItem[];
+  /** Is the data currently being fetch? */
+  isLoading: boolean;
+  /** What happens when we click the component? */
+  handleClick: () => void;
+  /** An optional custom test ID for the component.  */
   customTestId?: string;
 }
 
 const TrendingSuggestionList = ({
+  metaDataItems,
+  isLoading,
+  handleClick,
   customTestId = 'suggestion-list',
 }: Props): React.ReactElement => {
-  const { isLoading, data, isFetching, isFetched } = useQuery(
-    'suggested-items',
-    async () => {
-      const response = await fetch('../../Data/SuggestedItems.json');
-      const data = await response.json();
-      return data;
-    }
-  );
-
-  const handleClick = () => {};
-
   return (
     <ul
       className={isLoading ? 'loading-suggestion-list' : ''}
       data-testid={customTestId}
     >
-      {data &&
-        data.map((item: Item) => {
+      {metaDataItems &&
+        metaDataItems.map((item: MetaDataItem, index) => {
           return (
             <TrendingItemSuggestion
               customTestId="list-item"
-              key={item.id}
+              key={index}
               metaData={item}
               handleClick={handleClick}
-              isLoading={isFetching || !isFetched}
+              isLoading={isLoading}
             />
           );
         })}

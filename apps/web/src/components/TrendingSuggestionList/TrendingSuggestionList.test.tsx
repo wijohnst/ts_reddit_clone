@@ -1,30 +1,40 @@
-import { screen, render, waitFor } from '@testing-library/react';
+import { screen, render } from '@testing-library/react';
 import TrendingSuggestionList from './TrendingSuggestionList';
-import data from '../../../public/Data/SuggestedItems.json';
-
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { metaDataItems } from './TrendingSuggestionList.utils';
 
 describe('TrendingSuggestionList', () => {
+  const handleClick = jest.fn();
   it('should have a ul element', () => {
-    const queryClient = new QueryClient();
     render(
-      <QueryClientProvider client={queryClient}>
-        <TrendingSuggestionList />
-      </QueryClientProvider>
+      <TrendingSuggestionList
+        metaDataItems={metaDataItems}
+        isLoading={false}
+        handleClick={handleClick}
+      />
     );
     expect(screen.getByTestId('suggestion-list')).toBeInTheDocument();
   });
 
-  it('should render the same amount of items within data', async () => {
-    const queryClient = new QueryClient();
+  it('should have a ul element when loading', () => {
     render(
-      <QueryClientProvider client={queryClient}>
-        <TrendingSuggestionList />
-      </QueryClientProvider>
+      <TrendingSuggestionList
+        metaDataItems={metaDataItems}
+        isLoading={true}
+        handleClick={handleClick}
+      />
     );
-    await waitFor(async () => {
-      const SuggestionListItems = await screen.findAllByTestId('list-item');
-      expect(SuggestionListItems.length).toEqual(data.length);
-    });
+    expect(screen.getByTestId('suggestion-list')).toBeInTheDocument();
+  });
+
+  it('should render the same amount of items within data', () => {
+    render(
+      <TrendingSuggestionList
+        metaDataItems={metaDataItems}
+        isLoading={false}
+        handleClick={handleClick}
+      />
+    );
+    const listItem = screen.getAllByTestId('list-item');
+    expect(listItem.length).toEqual(metaDataItems.length);
   });
 });
