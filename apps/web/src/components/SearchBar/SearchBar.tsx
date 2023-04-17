@@ -52,7 +52,6 @@ const SearchBar = ({
   const handleOnChange = (): void => {
     const searchString = ref.current?.value;
     if (!!searchString) {
-      // commented bc func causes error onChange as it is not being passed from parent
       //  filterResults(searchString);
     }
   };

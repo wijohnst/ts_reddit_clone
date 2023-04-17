@@ -14,7 +14,7 @@ interface Props {
       subRedditName: string;
     };
   };
-  /** what happens when we click the component? */
+  /** What happens when we click the component? */
   handleClick: () => void;
   /** An optional custom test ID for the component.  */
   customTestId?: string;
@@ -37,7 +37,11 @@ const TrendingItemSuggestion = ({
   const { subRedditIcon, subRedditName } = targetSubreddit;
 
   return (
-    <li onClick={handleClick} data-testid={customTestId}>
+    <li
+      onClick={handleClick}
+      data-testid={customTestId}
+      className={isLoading ? 'loading' : ''}
+    >
       {!isLoading && (
         <>
           <div className="list-item-text-container">
