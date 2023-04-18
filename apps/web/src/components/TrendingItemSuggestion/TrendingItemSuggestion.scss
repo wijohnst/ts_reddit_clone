@@ -10,11 +10,16 @@ li {
 
 .loading {
   background-color: var(--whitesmoke);
+  margin-bottom: 0.1875rem;
 }
 
 li:hover {
   cursor: pointer;
   background-color: var(--whitesmoke);
+}
+
+.loading li {
+  background-color: var(--gray);
 }
 
 .list-item-text-container {

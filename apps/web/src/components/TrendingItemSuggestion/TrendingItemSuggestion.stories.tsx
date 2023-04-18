@@ -2,7 +2,7 @@ import * as React from 'react';
 import TrendingItemSuggestion from './TrendingItemSuggestion';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import './TrendingItemSuggestion.scss';
-import { metaData } from './TrendingItemSuggestion.utils.tsx';
+import { metaData } from './TrendingItemSuggestion.utils';
 
 export default {
   title: 'Components/TrendingItemSuggestion',

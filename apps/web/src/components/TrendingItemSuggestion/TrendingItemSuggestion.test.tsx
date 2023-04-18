@@ -1,6 +1,6 @@
 import { screen, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { metaData } from './TrendingItemSuggestion.utils.tsx';
+import { metaData } from './TrendingItemSuggestion.utils';
 import TrendingItemSuggestion from './TrendingItemSuggestion';
 
 describe('TrendingItemSuggestion', () => {
