@@ -1,16 +1,21 @@
 li {
-  background-color: #ffffff;
+  background-color: var(--white);
   display: flex;
   justify-content: space-between;
   max-height: 8.75rem;
   border-radius: 0.25rem;
   padding: 1rem;
+  gap: 10;
+}
+
+.loading {
+  background-color: var(--whitesmoke);
   margin-bottom: 0.1875rem;
 }
 
 li:hover {
   cursor: pointer;
-  background-color: #d9dbdc;
+  background-color: var(--whitesmoke);
 }
 
 .loading li {
@@ -40,7 +45,7 @@ h1 {
 
 h2 {
   font-weight: 400;
-  color: #888a8c;
+  color: var(--gray);
   padding: 0 2rem;
 }
 

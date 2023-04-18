@@ -4,7 +4,7 @@
 }
 
 .searchbar-container:hover {
-  outline: 0.125rem solid #3478cc;
+  outline: 0.125rem solid var(--blue);
 }
 
 // removing sb-container outline when input is focused
@@ -20,7 +20,7 @@
 input {
   width: 100%;
   padding: 0.625rem 3rem;
-  border: 0.1rem solid white;
+  border: 0.1rem solid var(--white);
   border-radius: 5rem;
 }
 
@@ -30,11 +30,11 @@ input {
 }
 
 input:hover {
-  outline: 0.125rem solid #3478cc;
+  outline: 0.125rem solid var(--blue);
 }
 
 input:focus {
-  outline: 0.125rem solid #3478cc;
+  outline: 0.125rem solid var(--blue);
   border-radius: 1.8rem 1.8rem 0rem 0rem;
 }
 
