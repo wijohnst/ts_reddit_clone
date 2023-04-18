@@ -23,7 +23,7 @@ export interface Props {
  */
 const SearchBar = ({
   handleSearch,
-  filterResults,
+  filterResults = () => [],
   customTestId = 'searchbar',
 }: Props): React.ReactElement => {
   /** references input element */
@@ -52,7 +52,7 @@ const SearchBar = ({
   const handleOnChange = (): void => {
     const searchString = ref.current?.value;
     if (!!searchString) {
-      //  filterResults(searchString);
+      filterResults(searchString);
     }
   };
 
