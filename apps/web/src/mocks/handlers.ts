@@ -3,7 +3,6 @@ import { metaDataItems } from '../components/TrendingSuggestionList/TrendingSugg
 
 export const handlers = [
   rest.get('/trending-suggestions', (req, res, ctx) => {
-    // how do we get prepped data?
     return res(ctx.status(200), ctx.json(metaDataItems));
   }),
 ];
