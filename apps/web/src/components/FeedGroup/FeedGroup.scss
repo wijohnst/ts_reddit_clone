@@ -1,0 +1,16 @@
+.feedbar-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.feedbar-heading {
+  font-family: 'Verdana';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--gray);
+  text-transform: uppercase;
+}
