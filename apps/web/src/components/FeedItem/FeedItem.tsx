@@ -21,9 +21,11 @@ const FeedItem = ({ svg, label, href }: Props) => {
   return (
     <a href={href} aria-label={label}>
       <div className="feedsbar-feeditem-container">
-        <Icon colorProp={iconColor.Default} customTestId={label}>
-          {svg}
-        </Icon>
+        <div className="feedsbar-feeditem-icon-container">
+          <Icon colorProp={iconColor.Default} customTestId={label}>
+            {svg}
+          </Icon>
+        </div>
         <label className="feedsbar-feeditem-label">{label}</label>
       </div>
     </a>
