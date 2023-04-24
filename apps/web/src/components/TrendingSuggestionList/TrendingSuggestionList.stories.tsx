@@ -21,15 +21,11 @@ const Template: ComponentStory<typeof TrendingSuggestionList> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   isLoading: false,
-  isFetching: false,
-  isFetched: true,
   metaDataItems: metaDataItems,
 };
 
 export const Loading = Template.bind({});
 Loading.args = {
   isLoading: true,
-  isFetching: true,
-  isFetched: false,
   metaDataItems: metaDataItems,
 };
