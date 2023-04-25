@@ -7,20 +7,20 @@ a:-webkit-any-link {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 10px;
-  gap: 10px;
+  padding: 0.625em;
+  gap: 0.625em;
   height: 100%;
 }
 
 .feedsbar-feeditem-icon-container {
-  width: 35px;
+  width: 2.25rem;
 }
 
 .feedsbar-feeditem-label {
   font-family: Verdana;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
-  line-height: 19px;
+  line-height: 1.25em;
   letter-spacing: 0em;
   text-align: left;
   color: var(--black);
