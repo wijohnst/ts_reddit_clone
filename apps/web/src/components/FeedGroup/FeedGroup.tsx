@@ -19,12 +19,12 @@ const FeedGroup = ({ heading, feedItems }: FeedGroupProps) => {
   return (
     <div className="feedbar-group">
       <h3 className="feedbar-heading">{heading}</h3>
-      {feedItems.map((feedItem) => (
+      {feedItems.map((feedItem, index) => (
         <FeedItem
           svg={feedItem.svg}
           label={feedItem.label}
           href={feedItem.href}
-          key={feedItem.label}
+          key={`${index}-${feedItem.label}`}
         />
       ))}
     </div>
