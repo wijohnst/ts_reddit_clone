@@ -2,7 +2,7 @@ import * as React from 'react';
 import TrendingItemSuggestion from '../TrendingItemSuggestion/TrendingItemSuggestion';
 import './TrendingSuggestionList.scss';
 
-interface MetaDataItem {
+export interface MetaDataItem {
   /** How can we view the suggested post? */
   URL: string;
   /** Suggestion Title */
@@ -12,7 +12,7 @@ interface MetaDataItem {
   /** Specific forum the suggestion lives in */
   targetSubreddit: {
     /** Forum's Icon */
-    subRedditIcon: React.ReactElement;
+    subRedditIcon: string;
     /** Forum's title */
     subRedditName: string;
   };

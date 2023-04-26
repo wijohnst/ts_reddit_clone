@@ -10,7 +10,7 @@ interface Props {
     trendingSuggestionHeading: string;
     trendingSuggestionSummary: string;
     targetSubreddit: {
-      subRedditIcon: React.ReactElement;
+      subRedditIcon: string;
       subRedditName: string;
     };
   };
@@ -53,14 +53,13 @@ const TrendingItemSuggestion = ({
                 {trendingSuggestionHeading}
               </h1>
             </div>
-            <h2 data-testid="list-item-summary">
-              {' '}
-              {trendingSuggestionSummary}
-            </h2>
+            <h2 data-testid="list-item-summary">{trendingSuggestionSummary}</h2>
             <div className="list-item-target-subreddit">
-              <Icon customTestId="list-item-subreddit-icon">
+              {/* <Icon customTestId="list-item-subreddit-icon">
+                
                 {subRedditIcon}
-              </Icon>
+              </Icon> */}
+              <p>{subRedditIcon}</p>
               <p data-testid="list-item-subreddit-link">{subRedditName}</p>
             </div>
           </div>
