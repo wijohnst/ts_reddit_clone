@@ -11,6 +11,6 @@ export const feedItems: FeedItemProps[] = [
   {
     svg: <PopularIcon />,
     label: 'Popular',
-    href: '',
+    href: '/popular',
   },
 ];
