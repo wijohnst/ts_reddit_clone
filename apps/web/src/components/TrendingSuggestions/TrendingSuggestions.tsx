@@ -20,13 +20,11 @@ const TrendingSuggestions = () => {
 
   return (
     <>
-      {data && (
-        <TrendingSuggestionList
-          metaDataItems={data}
-          isLoading={isLoading}
-          handleClick={handleClick}
-        />
-      )}
+      <TrendingSuggestionList
+        metaDataItems={data}
+        isLoading={isLoading}
+        handleClick={handleClick}
+      />
     </>
   );
 };
