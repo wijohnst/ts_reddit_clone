@@ -14,6 +14,11 @@
     "build-storybook": "build-storybook -s public",
     "build:svgs": "svgr --icon --out-dir src/assets"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "axios": "axios/dist/node/axios.cjs"
+    }
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.2",
     "@storybook/addon-a11y": "^6.5.16",
