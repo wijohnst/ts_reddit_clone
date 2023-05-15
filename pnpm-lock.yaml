@@ -75,6 +75,7 @@ importers:
       react-dom: ^17.0.2
       react-query: ^3.39.3
       react-redux: ^8.0.5
+      react-router-dom: ^6.11.1
       react-scripts: 5.0.0
       redux: ^4.2.1
       schema-utils: ^4.0.0
@@ -97,6 +98,7 @@ importers:
       react-dom: 17.0.2_react@17.0.2
       react-query: 3.39.3_sfoxds7t5ydpegc3knd667wn6m
       react-redux: 8.0.5_27nnqo76gztpod7yf2ma4s6bee
+      react-router-dom: 6.11.1_sfoxds7t5ydpegc3knd667wn6m
       react-scripts: 5.0.0_nscezoq4ovbipqvy34j76tzjli
       redux: 4.2.1
       schema-utils: 4.0.0
@@ -2597,6 +2599,11 @@ packages:
       redux: 4.2.1
       redux-thunk: 2.4.2_redux@4.2.1
       reselect: 4.1.7
+    dev: false
+
+  /@remix-run/router/1.6.1:
+    resolution: {integrity: sha512-YUkWj+xs0oOzBe74OgErsuR3wVn+efrFhXBWrit50kOiED+pvQe2r6MWY0iJMQU/mSVKxvNzL4ZaYvjdX+G7ZA==}
+    engines: {node: '>=14'}
     dev: false
 
   /@rollup/plugin-babel/5.3.1_3dsfpkpoyvuuxyfgdbpn4j4uzm:
@@ -15211,6 +15218,29 @@ packages:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /react-router-dom/6.11.1_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-dPC2MhoPeTQ1YUOt5uIK376SMNWbwUxYRWk2ZmTT4fZfwlOvabF8uduRKKJIyfkCZvMgiF0GSCQckmkGGijIrg==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.6.1
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      react-router: 6.11.1_react@17.0.2
+    dev: false
+
+  /react-router/6.11.1_react@17.0.2:
+    resolution: {integrity: sha512-OZINSdjJ2WgvAi7hgNLazrEV8SGn6xrKA+MkJe9wVDMZ3zQ6fdJocUjpCUCI0cNrelWjcvon0S/QK/j0NzL3KA==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.6.1
+      react: 17.0.2
+    dev: false
 
   /react-scripts/5.0.0_nscezoq4ovbipqvy34j76tzjli:
     resolution: {integrity: sha512-3i0L2CyIlROz7mxETEdfif6Sfhh9Lfpzi10CtcGs1emDQStmZfWjJbAIMtRD0opVUjQuFWqHZyRZ9PPzKCFxWg==}
